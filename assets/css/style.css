@@ -49,3 +49,9 @@
   text-shadow:0px 1px 0px #1212ff;
   font-weight: bolder;
 }
+
+/*Footer style*/
+.footerstyle{
+  font-weight: bolder;
+  color: blue;
+}
