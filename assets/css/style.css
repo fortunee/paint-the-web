@@ -1,0 +1,38 @@
+/*reset all browser margins and padding*/
+.no-margin{
+	margin: 0px;
+}
+
+.no-padding{
+	padding: 0px;
+}
+/*Navigation styles*/
+.navstyle {
+	background: rgb(56, 75, 208);
+}
+
+.navbar-toggle{
+	border: 1px solid white;
+}
+.icon-bar{
+	background: white;
+}
+
+.navstyle-links a:hover{
+	color: darkblue;
+  transition: all .3s ease-in-out;
+  background: rgba(15, 110, 142, 0.1);
+}
+
+.nav a{
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+/*text logo style*/
+#logo{
+	font-weight: bolder;
+	text-shadow: 0px 1px 2px red;
+	color: white;
+}
