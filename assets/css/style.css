@@ -54,6 +54,21 @@ body{
   font-weight: bolder;
 }
 
+/*Working area styles*/
+.workingArea{
+	border-right: 2px solid blue;
+	border-left: 2px solid blue;
+	padding: 15px;
+}
+
+.drawingBoard{
+	background: #fff;
+	border: 1px solid black;
+	border-radius: 4px;
+	height: 380px;
+	padding: 10px;
+}
+
 /*Footer style*/
 .footerstyle{
   font-weight: bolder;

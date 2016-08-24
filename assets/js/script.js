@@ -19,6 +19,7 @@
   var navLogin        = document.getElementById('navLogin');
   var navSignup       = document.getElementById('navSignup');
   var alienView       = document.getElementById('alienView');
+  var memberView      = document.getElementById('memberView');
 
   // Add a login Event to get the form data
   btnLogin.addEventListener("click", function(e){
@@ -29,16 +30,12 @@
     // Login user
     var promise = auth.signInWithEmailAndPassword(email, pass);
     promise
-      // .then(function(user) {
-      //   // console.log(user);
-      // })
       .catch(function(e) {
         // Handle Errors here.
         var errorCode = e.code;
         var errorMessage = e.message;
         console.log(errorCode, errorMessage);
       })
-
   });
 
   // Add a Signup event
@@ -74,12 +71,14 @@
       navLogin.classList.add('hide');
       navSignup.classList.add('hide');
       alienView.classList.add('hide');
+      memberView.classList.remove('hide');
     }else{
       console.log("not logged in")
       btnLogout.classList.add('hide');
       navLogin.classList.remove('hide');
       navSignup.classList.remove('hide');
-      alienView.classList.remove('hide')
+      alienView.classList.remove('hide');
+      memberView.classList.add('hide');
     }
 
   })
