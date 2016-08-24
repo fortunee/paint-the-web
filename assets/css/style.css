@@ -1,3 +1,7 @@
+body{
+	background-color: #d9edf7;
+}
+
 /*reset all browser margins and padding*/
 .no-margin{
 	margin: 0;
