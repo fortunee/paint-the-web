@@ -7,8 +7,10 @@
   <!--CDN-Bootstrap minified CSS -->
   <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- custom style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
 </head>
 <body>
@@ -36,6 +38,7 @@
               data-target="#loginModal">Login</a></li>
   					<li><a data-toggle="modal"
               data-target="#signUpModal">Signup</a></li>
+            <li><a id="btnLogout" class="btn btn-action hide">Logout</a></li>
   				</ul>
   			</div>
   			</div>
@@ -43,151 +46,154 @@
   	</nav>
 	</header>
 
-  <!-- OH how sweet! The welcome jumbotron  -->
-  <div class="welcome">
-    <div class="jumbotron text-right">
-      <div class="container">
-        <h2><span id="logo"><em>PaintThe</em>Web</span></h2>
-        <h3>Hey Buddy! I wanna paint with you</h3>
-        <h3>Let's start off with something cool</h3>
-        <h3>Signup and let's get to work</h3>
-        <p>
-          <a class="btn btn-primary btn-lg" data-toggle="modal"
-            data-target="#signUpModal" role="button">Signup</a> <br>
-          <em class="small">or click <a  data-toggle="modal"
-            data-target="#loginModal">here</a> to login
-          </em>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Users Testimonies columns - I pray oo -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Joshua - Artist</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-        tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-        massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-        Donec sed odio dui. </p>
-      </div>
-      <div class="col-md-4">
-        <h2>Shalom - Painter</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-        cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-        amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-      </div>
-      <div class="col-md-4">
-        <h2>The Boss - Just me</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-        Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
-        commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      </div>
-    </div>
-  </div>
-  <!-- /container - users testimonies-->
-
-
-  <!-- Modal for user signup form -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog"
-       aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <button type="button" class="close"
-             data-dismiss="modal">
-                 <span aria-hidden="true">&times;</span>
-                 <span class="sr-only">Close</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">
-              Sign up
-          </h4>
-        </div>
-
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <form class="form-horizontal" role="form">
-            <div class="form-group">
-              <label  class="col-sm-2 control-label"
-                        for="inputEmail3">Email</label>
-              <div class="col-sm-10">
-                  <input type="email" class="form-control"
-                  id="inputEmail3" placeholder="Email"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label"
-                    for="inputPassword3" >Password</label>
-              <div class="col-sm-10">
-                  <input type="password" class="form-control"
-                      id="inputPassword3" placeholder="Password"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                      <input type="checkbox"/> Remember me
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-              </div>
-            </div>
-          </form>
+  <!-- Use class of hidden to make it disappear from logged in members -->
+  <div class="">
+    <!-- OH how sweet! The welcome jumbotron  -->
+    <div class="welcome">
+      <div class="jumbotron text-right">
+        <div class="container">
+          <h2><span id="logo"><em>PaintThe</em>Web</span></h2>
+          <h3>Hey Buddy! I wanna paint with you</h3>
+          <h3>Let's start off with something cool</h3>
+          <h3>Signup and let's get to work</h3>
+          <p>
+            <a class="btn btn-primary btn-lg" data-toggle="modal"
+              data-target="#signUpModal" role="button">Signup</a> <br>
+            <em class="small">or click <a  data-toggle="modal"
+              data-target="#loginModal">here</a> to login
+            </em>
+          </p>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Users Testimonies columns - I pray oo -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Joshua - Artist</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+          tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+          massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+          Donec sed odio dui. </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Shalom - Painter</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+          amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+        </div>
+        <div class="col-md-4">
+          <h2>The Boss - Just me</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+          Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
+          commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+      </div>
+    </div>
+    <!-- /container - users testimonies-->
 
 
-  <!--Login Form Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
-       aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
+    <!-- Modal for user signup form -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
             <button type="button" class="close"
                data-dismiss="modal">
                    <span aria-hidden="true">&times;</span>
                    <span class="sr-only">Close</span>
             </button>
             <h4 class="modal-title" id="myModalLabel">
-                Login
+                Sign up
             </h4>
-        </div>
+          </div>
 
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control"
-                id="exampleInputEmail1" placeholder="Enter email"/>
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <div class="form-horizontal" role="form">
+              <div class="form-group">
+                <label  class="col-sm-2 control-label"
+                          for="signupEmail">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control"
+                    id="signupEmail" placeholder="Email"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                      for="signupPassword" >Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control"
+                        id="signupPassword" placeholder="Password"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                        <input type="checkbox"/> Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button class="btn btn-primary"
+                  id="btnSignup">Sign up</button>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control"
-                    id="exampleInputPassword1" placeholder="Password"/>
-            </div>
-            <div class="checkbox">
-              <label>
-                  <input type="checkbox"/> Check me out
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
+
+
+    <!--Login Form Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <button type="button" class="close"
+                 data-dismiss="modal">
+                     <span aria-hidden="true">&times;</span>
+                     <span class="sr-only">Close</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                  Login
+              </h4>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="loginEmail">Email address</label>
+                  <input type="email" class="form-control"
+                  id="loginEmail" placeholder="Enter email"/>
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                  <input type="password" class="form-control"
+                      id="loginPassword" placeholder="Password"/>
+              </div>
+              <div class="checkbox">
+                <label>
+                    <input type="checkbox"/> Check me out
+                </label>
+              </div>
+              <button class="btn btn-primary"
+              id="btnLogin">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Both modals ends here -->
   </div>
-  <!-- Both modals ends here -->
 
 
   <hr>
@@ -196,9 +202,8 @@
   </footer>
 
 
-
+  <script src="assets/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
