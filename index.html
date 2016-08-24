@@ -198,17 +198,22 @@
   <!-- Working area content -->
   <div id="memberView" class="container workingArea hide">
       <!-- Canvas Drawing board -->
-      <div class="col-md-10 drawingBoard">
+      <canvas id="canvas" class="col-md-10 drawingBoard">
 
-      </div>
+      </canvas>
       <!-- Toolbox area -->
       <div class="col-md-2 toolBox">
 
       </div>
 
     <!-- Color palette, Clear Save and share button areas -->
-    <div class="row">
-      <div class="col-md-8 colorPalette">
+    <div class="row belowCanvas">
+      <div id="colorPalette" class="col-md-8 colorPalette">
+        <button id="black" class="colorButton"></button>
+        <button id="white" class="colorButton"></button>
+        <button id="red" class="colorButton"></button>
+        <button id="green" class="colorButton"></button>
+        <button id="blue" class="colorButton"></button>
 
       </div>
 
