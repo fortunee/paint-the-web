@@ -1,0 +1,57 @@
+/*reset all browser margins and padding*/
+.no-margin{
+	margin: 0;
+}
+
+.no-padding{
+	padding: 0;
+}
+/*Navigation styles*/
+.navstyle {
+	background: rgb(56, 75, 208);
+}
+
+.navbar-toggle{
+	border: 1px solid white;
+}
+.icon-bar{
+	background: white;
+}
+
+.navstyle-links a:hover{
+	color: darkblue;
+  transition: all .3s ease-in-out;
+  background: rgba(15, 110, 142, 0.1);
+}
+
+.nav a{
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+/*Text logo style*/
+#logo{
+	font-weight: bolder;
+	text-shadow: 0px 1px 2px red;
+	color: white;
+}
+
+/*Jumbotron style looking awesome*/
+.welcome{
+	background:url(http://goo.gl/BnfU50) no-repeat;
+	background-size: cover;
+}
+
+.jumbotron{
+  background: rgba(0, 0, 1, .7);
+  color: #fff;
+  text-shadow:0px 1px 0px #1212ff;
+  font-weight: bolder;
+}
+
+/*Footer style*/
+.footerstyle{
+  font-weight: bolder;
+  color: blue;
+}

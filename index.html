@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PaintTheWeb | Welcome</title>
-    <link rel="stylesheet" href="assets/css/style.js">
+  <meta charset="UTF-8">
+  <title>PaintTheWeb | Welcome</title>
+
+  <!--CDN-Bootstrap minified CSS -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
+    <!-- Header & Navbar goes here-->
+	<header>
+  	<nav class="navbar navstyle navbar-static-top no-margin" role="navigation">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#mobile-display" aria-expanded="false">
+    					<span class="sr-only">Toggle navigation</span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+  				</button>
+  				<a href="/" class="navbar-brand">
+            <strong id="logo"><em>PaintThe</em>Web</strong>
+          </a>
+  			</div>
+
+  			<div class="collapse navbar-collapse" id="mobile-display">
+  			<div class="navbar-right">
+  				<ul class="nav navbar-nav navstyle-links">
+  					<li><a href="/login">Login</a></li>
+  					<li><a href="/signup">Signup</a></li>
+  				</ul>
+  			</div>
+  			</div>
+  		</div>
+  	</nav>
+	</header>
+
+  <!-- OH how sweet! The welcome jumbotron  -->
+  <div class="welcome">
+    <div class="jumbotron text-right">
+      <div class="container">
+        <h2><span id="logo"><em>PaintThe</em>Web</span></h2>
+        <h3>Hey Buddy! I wanna paint with you</h3>
+        <h3>Let's start off with something cool</h3>
+        <h3>Signup and let's get to work</h3>
+        <p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Signup</a> <br>
+          <em class="small">or click <a href="#">here</a> to login</em>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Testimonies columns - I pray oo -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Joshua - Artist</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+        tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+        massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+        Donec sed odio dui. </p>
+      </div>
+      <div class="col-md-4">
+        <h2>Shalom - Painter</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
+        cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+        amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+      </div>
+      <div class="col-md-4">
+        <h2>The Boss - Just me</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
+        commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /container - users testimonies-->
+  <hr>
+  <footer class="text-center footerstyle">
+    <p>&copy; 2016 PaintTheWeb, Inc.</p>
+  </footer>
 
 
-    <script src="assets/js/script.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
