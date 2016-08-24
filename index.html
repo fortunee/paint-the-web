@@ -193,6 +193,49 @@
       </div>
     </div>
     <!-- Both modals ends here -->
+  </div>  <!-- alienView ends -->
+
+  <!-- Working area content -->
+  <div id="memberView" class="container wrapper hide">
+      <!-- Canvas Drawing board -->
+      <canvas id="canvas" class="col-md-10 drawingBoard">
+
+      </canvas>
+      <!-- Toolbox area -->
+      <div class="col-md-2 toolBox">
+        <button class="drawer btn btn-lg btn-default toolBtn" data-title="Circle">&#10061;</button>
+        <span class="toolText">Circle</span> <br><br>
+        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Rectangle">&#9633;</button>
+        <span class="toolText">Rectangle</span><br><br>
+        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Triangle">&#9650;</button>
+        <span class="toolText">Triangle</span><br><br>
+        <button class="btn btn-lg btn-primary glyphicon glyphicon-pencil"></button>
+        <span class="toolText">Pencil</span> <br><br>
+        <button class="btn  btn-lg btn-default glyphicon glyphicon-erase"></button>
+        <span class="toolText">Eraser</span> <br><br>
+
+      </div>
+
+    <!-- Color palette, Clear Save and share button areas -->
+    <div class="row otherTools">
+      <div id="colorPalette" class="col-md-8 colorPalette">
+        <button id="black" class="colorButton"></button>
+        <button id="white" class="colorButton"></button>
+        <button id="red" class="colorButton"></button>
+        <button id="green" class="colorButton"></button>
+        <button id="blue" class="colorButton"></button>
+
+        <span class="toolText text-center">Color Palette</span>
+
+      </div>
+
+      <div class="col-md-4 workButtons">
+        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="clearCanvas"></button>
+        <button class="btn btn-success glyphicon glyphicon-floppy-save" id="save"></button>
+        <button class="btn btn-info glyphicon glyphicon-share" id="share"></button>
+      </div>
+    </div>
+
   </div>
 
 
