@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <!-- Header & Navbar goes here-->
+  <!-- Header & Navbar goes here-->
 	<header>
   	<nav class="navbar navstyle navbar-static-top no-margin" role="navigation">
   		<div class="container">
@@ -35,10 +35,10 @@
   			<div class="navbar-right">
   				<ul class="nav navbar-nav navstyle-links">
   					<li><a data-toggle="modal"
-              data-target="#loginModal">Login</a></li>
+              data-target="#loginModal" id="navLogin">Login</a></li>
   					<li><a data-toggle="modal"
-              data-target="#signUpModal">Signup</a></li>
-            <li><a id="btnLogout" class="btn btn-action hide">Logout</a></li>
+              data-target="#signUpModal" id="navSignup">Signup</a></li>
+            <li><a id="btnLogout" class="hide">Logout</a></li>
   				</ul>
   			</div>
   			</div>
@@ -47,7 +47,7 @@
 	</header>
 
   <!-- Use class of hidden to make it disappear from logged in members -->
-  <div class="">
+  <div id="alienView" class="">
     <!-- OH how sweet! The welcome jumbotron  -->
     <div class="welcome">
       <div class="jumbotron text-right">

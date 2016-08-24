@@ -2,7 +2,7 @@
   // Initialize Firebase
 
   var config = {
-    apiKey: "API_KEY_GOES_HERE",
+    apiKey: "AIzaSyBHZoPj5BrPFuy1ZXtmdfVpEOOkw5ExdfI",
     authDomain: "painttheweb-d1f76.firebaseapp.com",
     databaseURL: "https://painttheweb-d1f76.firebaseio.com"
   };
@@ -16,6 +16,9 @@
   var loginPassword   = document.getElementById('loginPassword');
   var btnLogin        = document.getElementById('btnLogin');
   var btnLogout       = document.getElementById('btnLogout');
+  var navLogin        = document.getElementById('navLogin');
+  var navSignup       = document.getElementById('navSignup');
+  var alienView       = document.getElementById('alienView');
 
   // Add a login Event to get the form data
   btnLogin.addEventListener("click", function(e){
@@ -25,12 +28,17 @@
 
     // Login user
     var promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(function(e) {
-      // Handle Errors here.
-      var errorCode = e.code;
-      var errorMessage = e.message;
-      console.log(errorCode, errorMessage);
-    })
+    promise
+      // .then(function(user) {
+      //   // console.log(user);
+      // })
+      .catch(function(e) {
+        // Handle Errors here.
+        var errorCode = e.code;
+        var errorMessage = e.message;
+        console.log(errorCode, errorMessage);
+      })
+
   });
 
   // Add a Signup event
@@ -50,6 +58,31 @@
       console.log(errorCode, errorMessage);
     })
   });
+
+  // Logout user
+  btnLogout.addEventListener("click", function(e){
+    firebase.auth().signOut();
+  });
+
+  // Adding a real time event listner
+  firebase.auth().onAuthStateChanged(function(firebaseUser){
+
+    // Perform the following actions or otherwise
+    if(firebaseUser){
+      console.log(firebaseUser);
+      btnLogout.classList.remove('hide');
+      navLogin.classList.add('hide');
+      navSignup.classList.add('hide');
+      alienView.classList.add('hide');
+    }else{
+      console.log("not logged in")
+      btnLogout.classList.add('hide');
+      navLogin.classList.remove('hide');
+      navSignup.classList.remove('hide');
+      alienView.classList.remove('hide')
+    }
+
+  })
 
 
 }());
