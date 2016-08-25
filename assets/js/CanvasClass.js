@@ -94,3 +94,8 @@ CanvasClass.prototype.setStrokeWidth = function(size){
     var counter = document.getElementById('widthCount') ;
     counter.innerHTML = size ;
 };
+
+/* Sets stroke color */
+CanvasClass.prototype.setStrokeColor = function(color){
+    this.context.strokeStyle = color ;
+};
