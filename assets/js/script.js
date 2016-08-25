@@ -84,7 +84,7 @@
       navSignup.classList.remove('hide');
       alienView.classList.remove('hide');
       memberView.classList.add('hide');
-      console.log("ot logged in")
+      console.log("Not logged in")
     }
 
   })

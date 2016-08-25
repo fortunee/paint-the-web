@@ -75,20 +75,15 @@ body{
 	border: 0;
 	outline: 0;
 }
-.colorPalette input:hover{opacity: 0.5}
+.colorPalette input:hover{opacity: 0.5; cursor:pointer;}
 
 /*Palette colors*/
-#black {background-color: black;}
-#white {background-color: white;}
-#red {background-color: red;}
-#green {background-color: green;}
-#blue {background-color: blue;}
+.black {background-color: black;}
+.white {background-color: white;}
+.red {background-color: red;}
+.green {background-color: green;}
+.blue {background-color: blue;}
 
-/*Strips button defaut style*/
-/*.colorButton{
-	outline: 0;
-	border: 0;
-}*/
 
 .otherTools{
 	background: rgba(0, 0, 1, .7);
@@ -108,10 +103,6 @@ body{
 	text-shadow: 0px 1px 2px red;
 	color: white;
 }
-
-/*.toolBox button{
-	padding: 10px;
-}*/
 
 /*Footer style*/
 .footerstyle{
