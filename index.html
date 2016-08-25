@@ -7,9 +7,9 @@
   <!--CDN-Bootstrap minified CSS -->
   <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- custom style -->
+  <!-- Custom style -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- firebase CDN -->
+  <!-- Firebase CDN -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
 </head>
@@ -46,9 +46,8 @@
   	</nav>
 	</header>
 
-  <!-- Use class of hidden to make it disappear from logged in members -->
   <div id="alienView" class="">
-    <!-- OH how sweet! The welcome jumbotron  -->
+    <!-- Oh how sweet! The welcome jumbotron  -->
     <div class="welcome">
       <div class="jumbotron text-right">
         <div class="container">
@@ -91,7 +90,7 @@
         </div>
       </div>
     </div>
-    <!-- /container - users testimonies-->
+    <!-- Users testimonies columns-->
 
 
     <!-- Modal for user signup form -->
@@ -149,7 +148,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- Modal for user signup ends -->
 
 
     <!--Login Form Modal -->
@@ -167,6 +166,10 @@
               <h4 class="modal-title" id="myModalLabel">
                   Login
               </h4>
+              <!-- Flash message -->
+              <div id="errorFlash" class="alert alert-danger hide">
+                <strong>Error!</strong> Invalid login, please try again!
+              </div>
           </div>
 
           <!-- Modal Body -->
@@ -191,23 +194,30 @@
           </div>
         </div>
       </div>
-    </div>
+    </div><!--Login form modal ends -->
     <!-- Both modals ends here -->
   </div>  <!-- alienView ends -->
 
-  <!-- Working area content -->
+
+  <!-- Members area content -->
   <div id="memberView" class="container wrapper hide">
       <!-- Canvas Drawing board -->
-      <canvas id="canvas" class="col-md-10 drawingBoard">
+      <div class="col-md-10 drawingBoard"  >
+        <canvas id="canvas" width="925px" height="380px">
+          Please update your browser to use the canvas
+        </canvas>
 
-      </canvas>
+      </div>
       <!-- Toolbox area -->
       <div class="col-md-2 toolTip">
-        <button class="drawer btn btn-lg btn-default toolBtn" data-title="Circle">&#10061;</button>
+        <button class="drawer btn btn-lg btn-default toolBtn"
+          data-title="Circle">&#10061;</button>
         <span class="toolText">Circle</span> <br><br>
-        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Rectangle">&#9633;</button>
+        <button class="drawer btn  btn-lg btn-default toolBtn"
+          data-title="Rectangle">&#9633;</button>
         <span class="toolText">Rectangle</span><br><br>
-        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Triangle">&#9650;</button>
+        <button class="drawer btn  btn-lg btn-default toolBtn"
+          data-title="Triangle">&#9650;</button>
         <span class="toolText">Triangle</span><br><br>
         <button class="btn btn-lg btn-primary glyphicon glyphicon-pencil"></button>
         <span class="toolText">Pencil</span> <br><br>
@@ -218,30 +228,30 @@
         <span class="toolText">Stroke width</span>
         <input id="strokeRadius" min="1" value="4" max="10" step="1"  type="range"/>
 
-      </div>
+      </div><!-- Toolbox ends -->
 
-    <!-- Color palette, Clear Save and share button areas -->
+    <!-- Color palette -->
     <div class="row otherTools">
       <div id="colorPalette" class="col-md-8 colorPalette">
-        <input type="color" id="black" class="colorButton">
-        <input type="color" id="white" class="colorButton">
+        <span class="toolTip">Fill Color: </span>
         <input type="color" id="red" class="colorButton">
+        <span class="toolTip">Pencil Color: </span>
         <input type="color" id="green" class="colorButton">
+        <span class="toolTip">Shape Color: </span>
         <input type="color" id="blue" class="colorButton">
-
-
-        <span class="toolTip text-center">Color Palette</span>
-
       </div>
-
+      <!-- Clear Save and share buttons -->
       <div class="col-md-4 clearSaveShareButtons">
-        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="clearCanvas"></button>
-        <button class="btn btn-success glyphicon glyphicon-floppy-save" id="save"></button>
-        <button class="btn btn-info glyphicon glyphicon-share" id="share"></button>
+        <button class="btn btn-lg btn-danger glyphicon glyphicon-remove-sign"
+          id="clearCanvas"></button>
+        <button class="btn btn-lg btn-success glyphicon glyphicon-floppy-save"
+          id="save"></button>
+        <button class="btn btn-lg btn-info glyphicon glyphicon-share"
+          id="share"></button>
       </div>
     </div>
 
-  </div>
+  </div><!-- Members area ends -->
 
 
   <hr>
@@ -249,7 +259,7 @@
     <p>&copy; 2016 PaintTheWeb, Inc.</p>
   </footer>
 
-
+  <script src="assets/js/CanvasClass.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

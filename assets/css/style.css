@@ -56,20 +56,22 @@ body{
 
 /*Canvas style*/
 .drawingBoard{
-	background: #fff;
-	border: 1px solid black;
+	background: #2a5461;
+	border: 1px solid #b15a5a;
 	border-top: 0px;
 	border-radius: 4px;
 	height: 400px;
 	padding: 10px;
 }
-
+#canvas{
+	background: #fff;
+	border: 1px dotted blue;
+}
 /*Color palette styles*/
 .colorPalette input{
-	width: 20%;
+	width: 10%;
 	height: 10px;
 	margin-top: 10px;
-	float: left;
 	border: 0;
 	outline: 0;
 }
@@ -97,7 +99,6 @@ body{
 }
 
 .toolBox{
-	/*background: rgba(0, 0, 1, .7);*/
 	padding: 20px;
 	height: 400px;
 }

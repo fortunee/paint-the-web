@@ -19,6 +19,7 @@
   var navSignup       = document.getElementById('navSignup');
   var alienView       = document.getElementById('alienView');
   var memberView      = document.getElementById('memberView');
+  var errorFlash      = document.getElementById('errorFlash');
 
   /* Login event */
   btnLogin.addEventListener("click", function(e){
@@ -30,7 +31,9 @@
     var promise = auth.signInWithEmailAndPassword(email, pass);
     promise
       .catch(function(e) {
-        // Handle Errors here.
+
+        /* Flash and log errors*/
+        errorFlash.classList.remove('hide');
         var errorCode = e.code;
         var errorMessage = e.message;
         console.log(errorCode, errorMessage);
@@ -48,7 +51,8 @@
     /* Sign up user */
     var promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(function(e) {
-      // Handle Errors here.
+      /* Flash and log errors*/
+      errorFlash.classList.remove('hide');
       var errorCode = e.code;
       var errorMessage = e.message;
       console.log(errorCode, errorMessage);
@@ -80,7 +84,7 @@
       navSignup.classList.remove('hide');
       alienView.classList.remove('hide');
       memberView.classList.add('hide');
-      console.log("not logged in")
+      console.log("ot logged in")
     }
 
   })
