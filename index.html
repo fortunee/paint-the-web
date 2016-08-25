@@ -6,7 +6,7 @@
 
   <!--CDN-Bootstrap minified CSS -->
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    href="assets/css/bootstrap.min.css">
   <!-- Custom style -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Firebase CDN -->
@@ -211,19 +211,19 @@
       <!-- Toolbox area -->
       <div class="col-md-2 toolTip">
         <button class="drawingTool btn btn-lg btn-default toolBtn"
-          data-title="Circle">&#10061;</button>
+          id="circle"data-title="Circle">&#10061;</button>
         <span class="toolText">Circle</span> <br><br>
         <button class="drawingTool btn  btn-lg btn-default toolBtn"
-          data-title="Rectangle">&#9633;</button>
+          id="rectangle"data-title="Rectangle">&#9633;</button>
         <span class="toolText">Rectangle</span><br><br>
         <button class="drawingTool btn  btn-lg btn-default toolBtn"
-          data-title="Triangle">&#9650;</button>
+          id="triangle"data-title="Triangle">&#9650;</button>
         <span class="toolText">Triangle</span><br><br>
         <button class="drawingTool btn btn-lg btn-primary glyphicon glyphicon-pencil"
-          data-title="Pencil"></button>
+          id="pencilDraw" data-title="Pencil"></button>
         <span class="toolText">Pencil</span> <br><br>
         <button class="drawingTool btn  btn-lg btn-default glyphicon glyphicon-erase"
-          data-title="Eraser"></button>
+          id="eraser"data-title="Eraser"></button>
         <span class="toolText">Eraser</span> <br><br>
 
         <button class="btn btn-success" id="widthCount" >0</button>
@@ -245,9 +245,9 @@
       <!-- Clear Save and share buttons -->
       <div class="col-md-4 clearSaveShareButtons">
         <button class="btn btn-lg btn-danger glyphicon glyphicon-remove-sign"
-          id="clearCanvas"></button>
+          id="clearScreen"></button>
         <button class="btn btn-lg btn-success glyphicon glyphicon-floppy-save"
-          id="save"></button>
+          id="saveBtn"></button>
         <button class="btn btn-lg btn-info glyphicon glyphicon-share"
           id="share"></button>
       </div>
@@ -262,8 +262,9 @@
   </footer>
 
   <script src="assets/js/CanvasClass.js"></script>
+  <script src="assets/js/logic.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
