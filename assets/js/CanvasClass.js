@@ -86,3 +86,11 @@ CanvasClass.prototype
         $this.setStrokeColor(this.value);
     });
 };
+
+/* Sets stroke width */
+CanvasClass.prototype.setStrokeWidth = function(size){
+    this.radius = size ;
+    this.context.lineWidth = this.radius * 2 ;
+    var counter = document.getElementById('widthCount') ;
+    counter.innerHTML = size ;
+};
