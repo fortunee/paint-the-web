@@ -202,7 +202,7 @@
 
       </canvas>
       <!-- Toolbox area -->
-      <div class="col-md-2 toolBox">
+      <div class="col-md-2 toolTip">
         <button class="drawer btn btn-lg btn-default toolBtn" data-title="Circle">&#10061;</button>
         <span class="toolText">Circle</span> <br><br>
         <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Rectangle">&#9633;</button>
@@ -219,17 +219,18 @@
     <!-- Color palette, Clear Save and share button areas -->
     <div class="row otherTools">
       <div id="colorPalette" class="col-md-8 colorPalette">
-        <button id="black" class="colorButton"></button>
-        <button id="white" class="colorButton"></button>
-        <button id="red" class="colorButton"></button>
-        <button id="green" class="colorButton"></button>
-        <button id="blue" class="colorButton"></button>
+        <input type="color" id="black" class="colorButton">
+        <input type="color" id="white" class="colorButton">
+        <input type="color" id="red" class="colorButton">
+        <input type="color" id="green" class="colorButton">
+        <input type="color" id="blue" class="colorButton">
 
-        <span class="toolText text-center">Color Palette</span>
+
+        <span class="toolTip text-center">Color Palette</span>
 
       </div>
 
-      <div class="col-md-4 workButtons">
+      <div class="col-md-4 clearSaveShareButtons">
         <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="clearCanvas"></button>
         <button class="btn btn-success glyphicon glyphicon-floppy-save" id="save"></button>
         <button class="btn btn-info glyphicon glyphicon-share" id="share"></button>

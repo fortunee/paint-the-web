@@ -65,13 +65,15 @@ body{
 }
 
 /*Color palette styles*/
-.colorPalette button{
+.colorPalette input{
 	width: 20%;
 	height: 10px;
 	margin-top: 10px;
 	float: left;
+	border: 0;
+	outline: 0;
 }
-.colorPalette button:hover{opacity: 0.5}
+.colorPalette input:hover{opacity: 0.5}
 
 /*Palette colors*/
 #black {background-color: black;}
@@ -81,16 +83,16 @@ body{
 #blue {background-color: blue;}
 
 /*Strips button defaut style*/
-.colorButton{
+/*.colorButton{
 	outline: 0;
 	border: 0;
-}
+}*/
 
 .otherTools{
 	background: rgba(0, 0, 1, .7);
 }
 /*Clear save and share button*/
-.workButtons{
+.clearSaveShareButtons{
 	padding: 10px;
 }
 
@@ -100,7 +102,7 @@ body{
 	height: 400px;
 }
 
-.toolText{
+.toolTip{
 	font-weight: bold;
 	text-shadow: 0px 1px 2px red;
 	color: white;
