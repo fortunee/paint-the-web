@@ -104,3 +104,26 @@ CanvasClass.prototype.setStrokeColor = function(color){
 CanvasClass.prototype.setFillcolor = function(color){
     this.context.fillStyle = color;
 };
+
+/* Draws line on canvas*/
+CanvasClass.prototype.drawLine = function(e){
+
+    /* Pencil color fill and stroke color setup */
+    var oldStroke = this.context.strokeStyle;
+    var oldFill = this.context.fillStyle;
+    var pencilColor = document.getElementById('pencilColor').value;
+    this.setFillcolor(pencilColor);
+    this.setStrokeColor(pencilColor);
+
+    this.context.lineTo(e.offsetX, e.offsetY);
+    this.context.stroke();
+    this.context.beginPath();
+    this.context.globalCompositeOperation="source-over";
+    this.context.arc(e.offsetX, e.offsetY, this.radius, 0, Math.PI*2);
+    this.context.fill();
+    this.context.beginPath();
+    this.context.moveTo(e.offsetX, e.offsetY);
+
+    this.setFillcolor(oldFill);
+    this.setStrokeColor(oldStroke);
+};

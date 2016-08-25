@@ -66,6 +66,7 @@ body{
 #canvas{
 	background: #fff;
 	border: 1px dotted blue;
+	cursor: crosshair;
 }
 /*Color palette styles*/
 .colorPalette input{
