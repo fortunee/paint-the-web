@@ -7,8 +7,8 @@ var CanvasClass = function(canvasObj){
     this.radius = 10;
     this.shapeSize = 100;
     this.context = this.canvas.getContext('2d');
-    this.context.lineWidth = this.radius * 2 ;
-    this.drawMode = 'Pencil' ;
+    this.context.lineWidth = this.radius * 2;
+    this.drawMode = 'Pencil';
 };
 
 /**
@@ -28,8 +28,8 @@ CanvasClass.prototype.bindDrawingModesChangeListener = function(){
 
     var binder = function(){
         $this.drawMode = this.getAttribute("data-title");
-        var strokeColor = document.getElementById('strokeColor').value ;
-        var fillColor = document.getElementById('fillColor').value ;
+        var strokeColor = document.getElementById('strokeColor').value;
+        var fillColor = document.getElementById('fillColor').value;
         $this.setFillcolor(fillColor);
         $this.setStrokeColor(strokeColor);
     };
@@ -44,7 +44,7 @@ CanvasClass.prototype.bindDrawingModesChangeListener = function(){
 */
 CanvasClass.prototype
   .bindSettingsChangeListenters = function(){
-    var $this = this ;
+    var $this = this;
 
     /* Setup eraser */
     document.getElementById('eraser')
@@ -90,12 +90,17 @@ CanvasClass.prototype
 /* Sets stroke width */
 CanvasClass.prototype.setStrokeWidth = function(size){
     this.radius = size ;
-    this.context.lineWidth = this.radius * 2 ;
-    var counter = document.getElementById('widthCount') ;
-    counter.innerHTML = size ;
+    this.context.lineWidth = this.radius * 2;
+    var counter = document.getElementById('widthCount');
+    counter.innerHTML = size;
 };
 
 /* Sets stroke color */
 CanvasClass.prototype.setStrokeColor = function(color){
-    this.context.strokeStyle = color ;
+    this.context.strokeStyle = color;
+};
+
+/* Sets fill color */
+CanvasClass.prototype.setFillcolor = function(color){
+    this.context.fillStyle = color;
 };
