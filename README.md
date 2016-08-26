@@ -17,6 +17,7 @@
 * Hex color palette tool
 * Clear tool
 * Save tool
+* Circle shape tool
 * And a few more coming up soon
 
 
