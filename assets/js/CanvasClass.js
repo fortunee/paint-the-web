@@ -90,82 +90,89 @@ CanvasClass.prototype
 
 /* Sets stroke width */
 CanvasClass.prototype.setStrokeWidth = function(size){
-    this.radius = size ;
-    this.context.lineWidth = this.radius * 2;
-    var counter = document.getElementById('widthCount');
-    counter.innerHTML = size;
+  this.radius = size ;
+  this.context.lineWidth = this.radius * 2;
+  var counter = document.getElementById('widthCount');
+  counter.innerHTML = size;
 };
 
 /* Sets stroke color */
 CanvasClass.prototype.setStrokeColor = function(color){
-    this.context.strokeStyle = color;
+  this.context.strokeStyle = color;
 };
 
 /* Sets fill color */
 CanvasClass.prototype.setFillcolor = function(color){
-    this.context.fillStyle = color;
+  this.context.fillStyle = color;
 };
 
 /* Draws line on canvas*/
 CanvasClass.prototype.drawLine = function(e){
 
-    /* Pencil color fill and stroke color setup */
-    var oldStroke = this.context.strokeStyle;
-    var oldFill = this.context.fillStyle;
-    var pencilColor = document.getElementById('pencilColor').value;
-    this.setFillcolor(pencilColor);
-    this.setStrokeColor(pencilColor);
+  /* Pencil color fill and stroke color setup */
+  var oldStroke = this.context.strokeStyle;
+  var oldFill = this.context.fillStyle;
+  var pencilColor = document.getElementById('pencilColor').value;
+  this.setFillcolor(pencilColor);
+  this.setStrokeColor(pencilColor);
 
-    this.context.lineTo(e.offsetX, e.offsetY);
-    this.context.stroke();
-    this.context.beginPath();
-    this.context.globalCompositeOperation="source-over";
-    this.context.arc(e.offsetX, e.offsetY, this.radius, 0, Math.PI*2);
-    this.context.fill();
-    this.context.beginPath();
-    this.context.moveTo(e.offsetX, e.offsetY);
+  this.context.lineTo(e.offsetX, e.offsetY);
+  this.context.stroke();
+  this.context.beginPath();
+  this.context.globalCompositeOperation="source-over";
+  this.context.arc(e.offsetX, e.offsetY, this.radius, 0, Math.PI*2);
+  this.context.fill();
+  this.context.beginPath();
+  this.context.moveTo(e.offsetX, e.offsetY);
 
-    this.setFillcolor(oldFill);
-    this.setStrokeColor(oldStroke);
+  this.setFillcolor(oldFill);
+  this.setStrokeColor(oldStroke);
 };
 
 /* Eraser method */
 CanvasClass.prototype.eraseStuff = function(e){
-    this.context.beginPath();
-    this.context.globalCompositeOperation="destination-out";
-    this.context.arc(e.offsetX, e.offsetY,this.radius *5,Math.PI*2,false);
-    this.context.fill();
+  this.context.beginPath();
+  this.context.globalCompositeOperation="destination-out";
+  this.context.arc(e.offsetX, e.offsetY,this.radius *5,Math.PI*2,false);
+  this.context.fill();
 };
 
 /* Save method */
 CanvasClass.prototype.saveDrawing = function(){
-    var data = this.canvas.toDataURL();
-    window.open(data, '_blank',
-      'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
+  var data = this.canvas.toDataURL();
+  window.open(data, '_blank',
+    'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
 };
 
 /* Draw cirle method */
 CanvasClass.prototype.drawCircle = function(e){
-    var oldLineWidth = this.context.lineWidth;
-    this.context.beginPath();
-    this.context.globalCompositeOperation="source-over";
-    this.context.arc(e.offsetX, e.offsetY, this.shapeSize - 50, 0, Math.PI*2);
-    this.context.fill();
-    this.context.lineWidth = 5;
-    this.context.stroke();
-    this.context.beginPath();
-    this.context.lineWidth = oldLineWidth;
+  var oldLineWidth = this.context.lineWidth;
+  this.context.beginPath();
+  this.context.globalCompositeOperation="source-over";
+  this.context.arc(e.offsetX, e.offsetY, this.shapeSize - 50, 0, Math.PI*2);
+  this.context.fill();
+  this.context.lineWidth = 5;
+  this.context.stroke();
+  this.context.beginPath();
+  this.context.lineWidth = oldLineWidth;
 };
 
 /* Draw rectangle method */
 CanvasClass.prototype.drawRectangle = function(e){
-    var oldLineWidth = this.context.lineWidth;
-    this.context.beginPath();
-    this.context.globalCompositeOperation="source-over";
-    this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70 , this.shapeSize);
-    this.context.fill();
-    this.context.lineWidth = 5 ;
-    this.context.stroke();
-    this.context.beginPath();
-    this.context.lineWidth = oldLineWidth ;
+  var oldLineWidth = this.context.lineWidth;
+  this.context.beginPath();
+  this.context.globalCompositeOperation="source-over";
+  this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70 , this.shapeSize);
+  this.context.fill();
+  this.context.lineWidth = 5 ;
+  this.context.stroke();
+  this.context.beginPath();
+  this.context.lineWidth = oldLineWidth ;
+};
+
+/* Draw triangle method */
+CanvasClass.prototype.drawTriangle = function(e){
+  var oldLineWidth = this.context.lineWidth;
+  this.context.beginPath();
+  this.context.globalCompositeOperation="source-over";
 };
