@@ -142,3 +142,16 @@ CanvasClass.prototype.saveDrawing = function(){
     window.open(data, '_blank',
       'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
 };
+
+/* Draw cirle method */
+CanvasClass.prototype.drawCircle = function(e){
+    var oldLineWidth = this.context.lineWidth;
+    this.context.beginPath();
+    this.context.globalCompositeOperation="source-over";
+    this.context.arc(e.offsetX, e.offsetY, this.shapeSize, 0, Math.PI*2);
+    this.context.fill();
+    this.context.lineWidth = 5 ;
+    this.context.stroke();
+    this.context.beginPath();
+    this.context.lineWidth = oldLineWidth ;
+};
