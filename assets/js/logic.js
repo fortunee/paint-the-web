@@ -18,6 +18,12 @@ var drawLine = function(e){
     }
 };
 
+var drawShape = function(e){
+  if(canvasClass.drawMode == 'Circle'){
+    canvasClass.drawCircle(e);
+  }
+};
+
 /* Add functionality on mouse contact with canvas */
 var engage = function(e){
     dragging = true;
@@ -41,6 +47,7 @@ var initializeCanvas = function(canvas){
     canvas.addEventListener('mousedown', engage);
     canvas.addEventListener('mouseup', disengage);
     canvas.addEventListener('mousemove', drawLine);
+    canvas.addEventListener('click', drawShape);
 };
 
 initializeCanvas(canvas);
