@@ -162,17 +162,30 @@ CanvasClass.prototype.drawRectangle = function(e){
   var oldLineWidth = this.context.lineWidth;
   this.context.beginPath();
   this.context.globalCompositeOperation="source-over";
-  this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70 , this.shapeSize);
+  this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70, this.shapeSize);
   this.context.fill();
-  this.context.lineWidth = 5 ;
+  this.context.lineWidth = 5;
   this.context.stroke();
   this.context.beginPath();
-  this.context.lineWidth = oldLineWidth ;
+  this.context.lineWidth = oldLineWidth;
 };
 
 /* Draw triangle method */
 CanvasClass.prototype.drawTriangle = function(e){
   var oldLineWidth = this.context.lineWidth;
+  var height = this.shapeSize * (Math.sqrt(3)/2);
+  var X = e.offsetX - 15;
+  var Y = e.offsetY - 40;
   this.context.beginPath();
   this.context.globalCompositeOperation="source-over";
+  this.context.moveTo(X, Y);
+  this.context.lineTo(X+50, Y+height);
+  this.context.lineTo(X-50, Y+height);
+  this.context.lineTo(X, Y);
+  this.context.fill();
+  this.context.closePath();
+  this.context.lineWidth = 5;
+  this.context.stroke();
+  this.context.beginPath();
+  this.context.lineWidth = oldLineWidth;
 };
