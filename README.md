@@ -19,6 +19,7 @@
 * Save tool
 * Circle shape tool
 * Rectangle shape tool
+* Triangle shape tool
 * And a few more coming up soon
 
 
