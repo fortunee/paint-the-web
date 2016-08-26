@@ -18,9 +18,12 @@ var drawLine = function(e){
     }
 };
 
+/* Draw a shape */
 var drawShape = function(e){
   if(canvasClass.drawMode == 'Circle'){
     canvasClass.drawCircle(e);
+  }else if (canvasClass.drawMode == 'Rectangle') {
+    canvasClass.drawRectangle(e);
   }
 };
 
