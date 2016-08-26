@@ -19,7 +19,7 @@ var drawLine = function(e){
 };
 
 var drawShape = function(e){
-  if(drawMode == 'Circle'){
+  if(canvasClass.drawMode == 'Circle'){
     canvasClass.drawCircle(e);
   }
 };
@@ -47,6 +47,7 @@ var initializeCanvas = function(canvas){
     canvas.addEventListener('mousedown', engage);
     canvas.addEventListener('mouseup', disengage);
     canvas.addEventListener('mousemove', drawLine);
+    canvas.addEventListener('click', drawShape);
 };
 
 initializeCanvas(canvas);
