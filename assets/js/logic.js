@@ -24,6 +24,8 @@ var drawShape = function(e){
     canvasClass.drawCircle(e);
   }else if (canvasClass.drawMode == 'Rectangle') {
     canvasClass.drawRectangle(e);
+  }else if (canvasClass.drawMode == 'Triangle') {
+    canvasClass.drawTriangle(e);
   }
 };
 
