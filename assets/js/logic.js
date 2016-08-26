@@ -12,7 +12,7 @@ var drawLine = function(e){
         console.log(canvasClass.drawMode);
         if(canvasClass.drawMode == 'Pencil'){
           canvasClass.drawLine(e);
-        }else if(canvas.drawMode == 'Eraser'){
+        }else if(canvasClass.drawMode == 'Eraser'){
           canvasClass.eraseStuff(e);
         }
     }
