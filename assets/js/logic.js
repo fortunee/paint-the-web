@@ -6,6 +6,7 @@ var canvas = document.getElementById('canvas');
 var CanvasClass;
 var dragging = false;
 
+/* Use the draw line functionality */
 var drawLine = function(e){
     if(dragging){
         console.log(canvasClass.drawMode);
