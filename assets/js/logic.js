@@ -52,3 +52,9 @@ document.getElementById('clearScreen')
       canvasClass.canvas.width,
       canvasClass.canvas.height);
 });
+
+/* Save drawing on canvas */
+document.getElementById('saveBtn')
+  .addEventListener('click', function(){
+    canvasClass.saveDrawing();
+});

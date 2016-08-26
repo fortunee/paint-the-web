@@ -137,7 +137,7 @@ CanvasClass.prototype.eraseStuff = function(e){
 };
 
 /* Save method */
-CanvasClass.prototype.saveImage = function(){
+CanvasClass.prototype.saveDrawing = function(){
     var data = this.canvas.toDataURL();
     window.open(data, '_blank',
       'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
