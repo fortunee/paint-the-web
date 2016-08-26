@@ -5,7 +5,7 @@
 var CanvasClass = function(canvasObj){
     this.canvas = canvasObj;
     this.radius = 10;
-    this.shapeSize = 50;
+    this.shapeSize = 100;
     this.context = this.canvas.getContext('2d');
     this.context.lineWidth = this.radius * 2;
     this.drawMode = 'Pencil';
@@ -149,10 +149,23 @@ CanvasClass.prototype.drawCircle = function(e){
     var oldLineWidth = this.context.lineWidth;
     this.context.beginPath();
     this.context.globalCompositeOperation="source-over";
-    this.context.arc(e.offsetX, e.offsetY, this.shapeSize, 0, Math.PI*2);
+    this.context.arc(e.offsetX, e.offsetY, this.shapeSize - 50, 0, Math.PI*2);
     this.context.fill();
     this.context.lineWidth = 5;
     this.context.stroke();
     this.context.beginPath();
     this.context.lineWidth = oldLineWidth;
+};
+
+/* Draw rectangle method */
+CanvasClass.prototype.drawRectangle = function(e){
+    var oldLineWidth = this.context.lineWidth;
+    this.context.beginPath();
+    this.context.globalCompositeOperation="source-over";
+    this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70 , this.shapeSize);
+    this.context.fill();
+    this.context.lineWidth = 5 ;
+    this.context.stroke();
+    this.context.beginPath();
+    this.context.lineWidth = oldLineWidth ;
 };
