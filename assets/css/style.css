@@ -54,6 +54,11 @@ body{
   font-weight: bolder;
 }
 
+/*Reset all my anchor tags cursor to pointer*/
+a{
+	cursor: pointer;
+}
+
 /*Canvas style*/
 .drawingBoard{
 	background: #2a5461;
@@ -99,10 +104,11 @@ body{
 	height: 400px;
 }
 
-.toolTip{
+.toolTextStyle{
 	font-weight: bold;
 	text-shadow: 0px 1px 2px red;
 	color: white;
+	padding-top: 10px;
 }
 
 /*Footer style*/

@@ -127,3 +127,11 @@ CanvasClass.prototype.drawLine = function(e){
     this.setFillcolor(oldFill);
     this.setStrokeColor(oldStroke);
 };
+
+/* Eraser method */
+CanvasClass.prototype.eraseStuff = function(e){
+    this.context.beginPath();
+    this.context.globalCompositeOperation="destination-out";
+    this.context.arc(e.offsetX, e.offsetY,this.radius *5,Math.PI*2,false);
+    this.context.fill();
+};
