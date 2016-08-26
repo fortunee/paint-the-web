@@ -135,3 +135,10 @@ CanvasClass.prototype.eraseStuff = function(e){
     this.context.arc(e.offsetX, e.offsetY,this.radius *5,Math.PI*2,false);
     this.context.fill();
 };
+
+/* Save method */
+CanvasClass.prototype.saveImage = function(){
+    var data = this.canvas.toDataURL();
+    window.open(data, '_blank',
+      'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
+};
