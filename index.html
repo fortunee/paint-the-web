@@ -6,10 +6,10 @@
 
   <!--CDN-Bootstrap minified CSS -->
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- custom style -->
+    href="assets/css/bootstrap.min.css">
+  <!-- Custom style -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- firebase CDN -->
+  <!-- Firebase CDN -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
 </head>
@@ -46,9 +46,8 @@
   	</nav>
 	</header>
 
-  <!-- Use class of hidden to make it disappear from logged in members -->
   <div id="alienView" class="">
-    <!-- OH how sweet! The welcome jumbotron  -->
+    <!-- Oh how sweet! The welcome jumbotron  -->
     <div class="welcome">
       <div class="jumbotron text-right">
         <div class="container">
@@ -91,7 +90,7 @@
         </div>
       </div>
     </div>
-    <!-- /container - users testimonies-->
+    <!-- Users testimonies columns-->
 
 
     <!-- Modal for user signup form -->
@@ -149,7 +148,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- Modal for user signup ends -->
 
 
     <!--Login Form Modal -->
@@ -167,6 +166,10 @@
               <h4 class="modal-title" id="myModalLabel">
                   Login
               </h4>
+              <!-- Flash message -->
+              <div id="errorFlash" class="alert alert-danger hide">
+                <strong>Error!</strong> Invalid login, please try again!
+              </div>
           </div>
 
           <!-- Modal Body -->
@@ -191,52 +194,66 @@
           </div>
         </div>
       </div>
-    </div>
+    </div><!--Login form modal ends -->
     <!-- Both modals ends here -->
   </div>  <!-- alienView ends -->
 
-  <!-- Working area content -->
+
+  <!-- Members area content -->
   <div id="memberView" class="container wrapper hide">
       <!-- Canvas Drawing board -->
-      <canvas id="canvas" class="col-md-10 drawingBoard">
+      <div class="col-md-10 drawingBoard"  >
+        <canvas id="canvas" width="925px" height="380px">
+          Please update your browser to use the canvas
+        </canvas>
 
-      </canvas>
+      </div>
       <!-- Toolbox area -->
-      <div class="col-md-2 toolBox">
-        <button class="drawer btn btn-lg btn-default toolBtn" data-title="Circle">&#10061;</button>
+      <div class="col-md-2 toolTip">
+        <button class="drawingTool btn btn-lg btn-default toolBtn"
+          id="circle"data-title="Circle">&#10061;</button>
         <span class="toolText">Circle</span> <br><br>
-        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Rectangle">&#9633;</button>
+        <button class="drawingTool btn  btn-lg btn-default toolBtn"
+          id="rectangle"data-title="Rectangle">&#9633;</button>
         <span class="toolText">Rectangle</span><br><br>
-        <button class="drawer btn  btn-lg btn-default toolBtn" data-title="Triangle">&#9650;</button>
+        <button class="drawingTool btn  btn-lg btn-default toolBtn"
+          id="triangle"data-title="Triangle">&#9650;</button>
         <span class="toolText">Triangle</span><br><br>
-        <button class="btn btn-lg btn-primary glyphicon glyphicon-pencil"></button>
+        <button class="drawingTool btn btn-lg btn-primary glyphicon glyphicon-pencil"
+          id="pencilDraw" data-title="Pencil"></button>
         <span class="toolText">Pencil</span> <br><br>
-        <button class="btn  btn-lg btn-default glyphicon glyphicon-erase"></button>
+        <button class="drawingTool btn  btn-lg btn-default glyphicon glyphicon-erase"
+          id="eraser"data-title="Eraser"></button>
         <span class="toolText">Eraser</span> <br><br>
 
-      </div>
+        <button class="btn btn-success" id="widthCount" >0</button>
+        <span class="toolText">Stroke width</span>
+        <input id="strokeRadius" min="1" value="4" max="10" step="1"  type="range"/>
 
-    <!-- Color palette, Clear Save and share button areas -->
+      </div><!-- Toolbox ends -->
+
+    <!-- Color palette -->
     <div class="row otherTools">
       <div id="colorPalette" class="col-md-8 colorPalette">
-        <button id="black" class="colorButton"></button>
-        <button id="white" class="colorButton"></button>
-        <button id="red" class="colorButton"></button>
-        <button id="green" class="colorButton"></button>
-        <button id="blue" class="colorButton"></button>
-
-        <span class="toolText text-center">Color Palette</span>
-
+        <span class="toolTip">Fill Color: </span>
+        <input type="color" id="fillColor" class="colorButton red">
+        <span class="toolTip">Pencil Color: </span>
+        <input type="color" id="pencilColor" class="colorButton green">
+        <span class="toolTip">Stroke Color: </span>
+        <input type="color" id="strokeColor" class="colorButton blue">
       </div>
-
-      <div class="col-md-4 workButtons">
-        <button class="btn btn-danger glyphicon glyphicon-remove-sign" id="clearCanvas"></button>
-        <button class="btn btn-success glyphicon glyphicon-floppy-save" id="save"></button>
-        <button class="btn btn-info glyphicon glyphicon-share" id="share"></button>
+      <!-- Clear Save and share buttons -->
+      <div class="col-md-4 clearSaveShareButtons">
+        <button class="btn btn-lg btn-danger glyphicon glyphicon-remove-sign"
+          id="clearScreen"></button>
+        <button class="btn btn-lg btn-success glyphicon glyphicon-floppy-save"
+          id="saveBtn"></button>
+        <button class="btn btn-lg btn-info glyphicon glyphicon-share"
+          id="share"></button>
       </div>
     </div>
 
-  </div>
+  </div><!-- Members area ends -->
 
 
   <hr>
@@ -244,9 +261,10 @@
     <p>&copy; 2016 PaintTheWeb, Inc.</p>
   </footer>
 
-
+  <script src="assets/js/CanvasClass.js"></script>
+  <script src="assets/js/logic.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
