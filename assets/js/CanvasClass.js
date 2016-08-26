@@ -22,7 +22,8 @@ CanvasClass.prototype.initStrokeWidth = function(){
 /**
 * Drawing modes change binding
 */
-CanvasClass.prototype.bindDrawingModesChangeListener = function(){
+CanvasClass.prototype
+  .bindDrawingModesChangeListener = function(){
     var $this = this;
     var items = document.getElementsByClassName('drawingTool');
 
