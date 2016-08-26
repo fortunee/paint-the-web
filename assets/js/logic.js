@@ -11,7 +11,7 @@ var drawLine = function(e){
     if(dragging){
         console.log(canvasClass.drawMode);
         if(canvasClass.drawMode == 'Pencil'){
-            canvasClass.drawLine(e);
+          canvasClass.drawLine(e);
         }
     }
 };

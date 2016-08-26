@@ -54,6 +54,11 @@ body{
   font-weight: bolder;
 }
 
+/*Reset all my anchor tags cursor to pointer*/
+a{
+	cursor: pointer;
+}
+
 /*Canvas style*/
 .drawingBoard{
 	background: #2a5461;
