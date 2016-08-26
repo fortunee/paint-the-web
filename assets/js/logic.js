@@ -35,10 +35,18 @@ var initializeCanvas = function(canvas){
     canvasClass.bindSettingsChangeListenters();
     canvasClass.bindDrawingModesChangeListener();
 
-    /* Bind events to canvas */
+    /* Bind mouse events to canvas */
     canvas.addEventListener('mousedown', engage);
     canvas.addEventListener('mouseup', disengage);
     canvas.addEventListener('mousemove', drawLine);
 };
 
 initializeCanvas(canvas);
+
+/* Clear the canvas for a new drawing */
+document.getElementById('clearScreen')
+  .addEventListener('click', function(){
+    canvasClass.context.clearRect(0, 0,
+      canvasClass.canvas.width,
+      canvasClass.canvas.height);
+});

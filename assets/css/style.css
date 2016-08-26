@@ -25,13 +25,13 @@ body{
 .navstyle-links a:hover{
 	color: darkblue;
   transition: all .3s ease-in-out;
-  background: rgba(15, 110, 142, 0.1);
+  background: rgba(15, 110, 142);
+	cursor: pointer;
 }
 
 .nav a{
 	color: white;
-	margin: 0;
-	padding: 0;
+	cursor: pointer;
 }
 
 /*Text logo style*/
