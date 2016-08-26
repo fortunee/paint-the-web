@@ -209,7 +209,13 @@
 
       </div>
       <!-- Toolbox area -->
-      <div class="col-md-2 toolTip">
+      <div class="col-md-2 toolTextStyle">
+        <button class="drawingTool btn btn-lg btn-primary glyphicon glyphicon-pencil"
+          id="pencilDraw" data-title="Pencil"></button>
+        <span class="toolText">Pencil</span> <br><br>
+        <button class="drawingTool btn  btn-lg btn-default glyphicon glyphicon-erase"
+          id="eraser"data-title="Eraser"></button>
+        <span class="toolText">Eraser</span> <br><br>
         <button class="drawingTool btn btn-lg btn-default toolBtn"
           id="circle"data-title="Circle">&#10061;</button>
         <span class="toolText">Circle</span> <br><br>
@@ -219,12 +225,7 @@
         <button class="drawingTool btn  btn-lg btn-default toolBtn"
           id="triangle"data-title="Triangle">&#9650;</button>
         <span class="toolText">Triangle</span><br><br>
-        <button class="drawingTool btn btn-lg btn-primary glyphicon glyphicon-pencil"
-          id="pencilDraw" data-title="Pencil"></button>
-        <span class="toolText">Pencil</span> <br><br>
-        <button class="drawingTool btn  btn-lg btn-default glyphicon glyphicon-erase"
-          id="eraser"data-title="Eraser"></button>
-        <span class="toolText">Eraser</span> <br><br>
+
 
         <button class="btn btn-success" id="widthCount" >0</button>
         <span class="toolText">Stroke width</span>
@@ -235,11 +236,11 @@
     <!-- Color palette -->
     <div class="row otherTools">
       <div id="colorPalette" class="col-md-8 colorPalette">
-        <span class="toolTip">Fill Color: </span>
+        <span class="toolTextStyle">Fill Color: </span>
         <input type="color" id="fillColor" class="colorButton red">
-        <span class="toolTip">Pencil Color: </span>
+        <span class="toolTextStyle">Pencil Color: </span>
         <input type="color" id="pencilColor" class="colorButton green">
-        <span class="toolTip">Stroke Color: </span>
+        <span class="toolTextStyle">Stroke Color: </span>
         <input type="color" id="strokeColor" class="colorButton blue">
       </div>
       <!-- Clear Save and share buttons -->
