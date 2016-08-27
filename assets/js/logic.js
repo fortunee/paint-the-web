@@ -70,3 +70,9 @@ document.getElementById('saveBtn')
   .addEventListener('click', function(){
     canvasClass.saveDrawing();
 });
+
+/* Share drawing to twitter */
+document.getElementById('shareBtn')
+  .addEventListener('click', function(){
+      canvasClass.tweetDrawing()
+});

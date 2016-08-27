@@ -189,3 +189,10 @@ CanvasClass.prototype.drawTriangle = function(e){
   this.context.beginPath();
   this.context.lineWidth = oldLineWidth;
 };
+
+/* Tweet drawing method */
+CanvasClass.prototype.tweetDrawing = function(){
+  document.getElementById('shareBtn')
+      .setAttribute('href',
+        "https://twitter.com/intent/tweet?text=STUFF DOESN'T WORT AT THE MOMENT");
+}
