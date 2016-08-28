@@ -139,9 +139,10 @@ CanvasClass.prototype.eraseStuff = function(e){
 
 /* Save method */
 CanvasClass.prototype.saveDrawing = function(){
-  var data = this.canvas.toDataURL();
-  window.open(data, '_blank',
-    'location=0, left=500, top=300, menubar=0, height=603, width=1000, fullscreen=0');
+  var data = this.canvas.toDataURL("image/png");
+  var link = document.getElementById('saveBtn');
+  link.setAttribute('download', 'MyCanvasDrawing.png');
+  link.setAttribute('href', data.replace("image/png", "image/octet-stream"));
 };
 
 /* Draw cirle method */
