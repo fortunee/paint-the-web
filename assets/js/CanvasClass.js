@@ -12,21 +12,24 @@ var CanvasClass = function(canvasObj){
 };
 
 /**
-*  Stroke width
-*/
+ * Stroke width method
+ * @function
+ */
 CanvasClass.prototype.initStrokeWidth = function(){
     /* Set the stroke width */
     this.setStrokeWidth(document.getElementById('strokeRadius').value);
 };
 
 /**
-* Drawing modes change binding
+* Drawing modes change binding method
+* @function
 */
 CanvasClass.prototype
   .bindDrawingModesChangeListener = function(){
     var $this = this;
     var items = document.getElementsByClassName('drawingTool');
 
+    /* Sets color values drawing tools */
     var binder = function(){
         $this.drawMode = this.getAttribute("data-title");
         var strokeColor = document.getElementById('strokeColor').value;
@@ -41,7 +44,8 @@ CanvasClass.prototype
 };
 
 /**
-*Binding settings and changes events
+* Binds settings and changes events
+* @function
 */
 CanvasClass.prototype
   .bindSettingsChangeListenters = function(){
@@ -88,7 +92,11 @@ CanvasClass.prototype
     });
 };
 
-/* Sets stroke width */
+
+/** Sets stroke width
+ * @function
+ * @param {Number} size - radius size
+ */
 CanvasClass.prototype.setStrokeWidth = function(size){
   this.radius = size ;
   this.context.lineWidth = this.radius * 2;
@@ -96,17 +104,28 @@ CanvasClass.prototype.setStrokeWidth = function(size){
   counter.innerHTML = size;
 };
 
-/* Sets stroke color */
+
+/** Sets stroke color
+ * @function
+ * @param {String} color - Stroke color
+ */
 CanvasClass.prototype.setStrokeColor = function(color){
   this.context.strokeStyle = color;
 };
 
-/* Sets fill color */
+
+/**Sets fill color
+ * @function
+ * @param {String} color - Fill color
+ */
 CanvasClass.prototype.setFillcolor = function(color){
   this.context.fillStyle = color;
 };
 
-/* Draws line on canvas*/
+/**Draws line on canvas
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.drawLine = function(e){
 
   /* Pencil color fill and stroke color setup */
@@ -129,7 +148,10 @@ CanvasClass.prototype.drawLine = function(e){
   this.setStrokeColor(oldStroke);
 };
 
-/* Eraser method */
+/**Eraser method
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.eraseStuff = function(e){
   this.context.beginPath();
   this.context.globalCompositeOperation="destination-out";
@@ -137,7 +159,9 @@ CanvasClass.prototype.eraseStuff = function(e){
   this.context.fill();
 };
 
-/* Save method */
+/**Save method
+ * @function
+ */
 CanvasClass.prototype.saveDrawing = function(){
   var data = this.canvas.toDataURL("image/png");
   var link = document.getElementById('saveBtn');
@@ -145,7 +169,10 @@ CanvasClass.prototype.saveDrawing = function(){
   link.setAttribute('href', data.replace("image/png", "image/octet-stream"));
 };
 
-/* Draw cirle method */
+/**Draw circle method
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.drawCircle = function(e){
   var oldLineWidth = this.context.lineWidth;
   this.context.beginPath();
@@ -158,7 +185,10 @@ CanvasClass.prototype.drawCircle = function(e){
   this.context.lineWidth = oldLineWidth;
 };
 
-/* Draw rectangle method */
+/**Draw rectangle method
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.drawRectangle = function(e){
   var oldLineWidth = this.context.lineWidth;
   this.context.beginPath();
@@ -171,7 +201,10 @@ CanvasClass.prototype.drawRectangle = function(e){
   this.context.lineWidth = oldLineWidth;
 };
 
-/* Draw triangle method */
+/**Draw triangle method
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.drawTriangle = function(e){
   var oldLineWidth = this.context.lineWidth;
   var height = this.shapeSize * (Math.sqrt(3)/2);
@@ -191,7 +224,10 @@ CanvasClass.prototype.drawTriangle = function(e){
   this.context.lineWidth = oldLineWidth;
 };
 
-/* Tweet drawing method */
+/**Tweet Drawing method 
+ * @function
+ * @param {Object} e - Mouse event
+ */
 CanvasClass.prototype.tweetDrawing = function(){
   document.getElementById('shareBtn')
       .setAttribute('href',

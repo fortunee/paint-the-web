@@ -6,7 +6,10 @@ var canvas = document.getElementById('canvas');
 var CanvasClass;
 var dragging = false;
 
-/* Use the draw line functionality */
+/**Use the draw line functionality
+ * @function
+ * @param {Object} e - Mouse event
+ */
 var drawLine = function(e){
     if(dragging){
         console.log(canvasClass.drawMode);
@@ -18,7 +21,11 @@ var drawLine = function(e){
     }
 };
 
-/* Draw a shape */
+
+/**Draw a shape
+ * @function
+ * @param {Object} e - Mouse event
+ */
 var drawShape = function(e){
   if(canvasClass.drawMode == 'Circle'){
     canvasClass.drawCircle(e);
@@ -29,19 +36,29 @@ var drawShape = function(e){
   }
 };
 
-/* Add functionality on mouse contact with canvas */
+/**Add functionality on mouse contact with canvas
+ * @function
+ * @param {Object} e - Mouse event
+ */
 var engage = function(e){
     dragging = true;
     canvasClass.drawLine(e);
 };
 
-/* Removes functionality on mouse contact with canvas */
+
+/**Removes functionality on mouse contact with canvas
+ * @function
+ */
 var disengage = function(){
     dragging = false ;
     canvasClass.context.beginPath();
 };
 
-/* Creates a canvas object and setsup some methods */
+
+/**Creates a canvas object and setsup some methods
+ * @function
+ * @param {Object} e - canvas element
+ */
 var initializeCanvas = function(canvas){
     canvasClass = new CanvasClass(canvas);
     canvasClass.initStrokeWidth();
