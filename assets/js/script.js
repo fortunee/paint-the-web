@@ -30,6 +30,9 @@
     /* Login user */
     var promise = auth.signInWithEmailAndPassword(email, pass);
     promise
+      .then(function(){
+        location.reload();
+      })
       .catch(function(e) {
 
         /* Flash and log errors*/
@@ -50,12 +53,16 @@
 
     /* Sign up user */
     var promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(function(e) {
-      /* Flash and log errors*/
-      errorFlash.classList.remove('hide');
-      var errorCode = e.code;
-      var errorMessage = e.message;
-      console.log(errorCode, errorMessage);
+    promise
+      .then(function() {
+        location.reload();
+      })
+      .catch(function(e) {
+        /* Flash and log errors*/
+        errorFlash.classList.remove('hide');
+        var errorCode = e.code;
+        var errorMessage = e.message;
+        console.log(errorCode, errorMessage);
     })
   });
 
