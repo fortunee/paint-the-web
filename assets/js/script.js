@@ -20,6 +20,7 @@
   var alienView       = document.getElementById('alienView');
   var memberView      = document.getElementById('memberView');
   var errorFlash      = document.getElementById('errorFlash');
+  var successFlash    = document.getElementById('successFlash');
 
   /* Login event */
   btnLogin.addEventListener("click", function(e){
@@ -45,7 +46,7 @@
 
   /* Signup event */
   btnSignup.addEventListener("click", function(e){
-
+    successFlash.classList.remove('hide');
     //TODO: BE SURE EMAIL IS VALID
     var email = signupEmail.value;
     var pass  = signupPassword.value;
@@ -60,6 +61,7 @@
       .catch(function(e) {
         /* Flash and log errors*/
         errorFlash.classList.remove('hide');
+        successFlash.classList.add('hide');
         var errorCode = e.code;
         var errorMessage = e.message;
         console.log(errorCode, errorMessage);
