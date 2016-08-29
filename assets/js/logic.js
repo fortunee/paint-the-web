@@ -3,7 +3,7 @@
 */
 var canvas = document.getElementById('canvas');
 
-var CanvasClass;
+var canvasClass;
 var dragging = false;
 
 /**Use the draw line functionality
