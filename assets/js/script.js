@@ -21,9 +21,13 @@
   var memberView      = document.getElementById('memberView');
   var errorFlash      = document.getElementById('errorFlash');
   var successFlash    = document.getElementById('successFlash');
+  var loginFlash      = document.getElementById('loginFlash');
+  var loginError      = document.getElementById('loginError');
 
   /* Login event */
   btnLogin.addEventListener("click", function(e){
+    loginFlash.classList.remove('hide');
+
     var email = loginEmail.value;
     var pass = loginPassword.value;
     var auth = firebase.auth();
@@ -35,9 +39,9 @@
         location.reload();
       })
       .catch(function(e) {
-
         /* Flash and log errors*/
-        errorFlash.classList.remove('hide');
+        loginError.classList.remove('hide');
+        loginFlash.classList.add('hide');
         var errorCode = e.code;
         var errorMessage = e.message;
         console.log(errorCode, errorMessage);
