@@ -1,0 +1,118 @@
+body{
+	background-color: #d9edf7;
+}
+
+/*reset all browser margins and padding*/
+.no-margin{
+	margin: 0;
+}
+
+.no-padding{
+	padding: 0;
+}
+/*Navigation styles*/
+.navstyle {
+	background: rgb(56, 75, 208);
+}
+
+.navbar-toggle{
+	border: 1px solid white;
+}
+.icon-bar{
+	background: white;
+}
+
+.navstyle-links a:hover{
+	color: darkblue;
+  transition: all .3s ease-in-out;
+  background: rgba(15, 110, 142);
+	cursor: pointer;
+}
+
+.nav a{
+	color: white;
+	cursor: pointer;
+}
+
+/*Text logo style*/
+#logo{
+	font-weight: bolder;
+	text-shadow: 0px 1px 2px red;
+	color: white;
+}
+
+/*Jumbotron style looking awesome*/
+.welcome{
+	background:url(http://goo.gl/BnfU50) no-repeat;
+	background-size: cover;
+}
+
+.jumbotron{
+  background: rgba(0, 0, 1, .7);
+  color: #fff;
+  text-shadow:0px 1px 0px #1212ff;
+  font-weight: bolder;
+}
+
+/*Reset all my anchor tags cursor to pointer*/
+a{
+	cursor: pointer;
+}
+
+/*Canvas style*/
+.drawingBoard{
+	background: #2a5461;
+	border: 1px solid #b15a5a;
+	border-top: 0px;
+	border-radius: 4px;
+	height: 400px;
+	padding: 10px;
+}
+#canvas{
+	background: #fff;
+	border: 1px dotted blue;
+	cursor: crosshair;
+}
+/*Color palette styles*/
+.colorPalette input{
+	width: 10%;
+	height: 10px;
+	margin-top: 10px;
+	border: 0;
+	outline: 0;
+}
+.colorPalette input:hover{opacity: 0.5; cursor:pointer;}
+
+/*Palette colors*/
+.black {background-color: black;}
+.white {background-color: white;}
+.red {background-color: red;}
+.green {background-color: green;}
+.blue {background-color: blue;}
+
+
+.otherTools{
+	background: rgba(0, 0, 1, .7);
+}
+/*Clear save and share button*/
+.clearSaveShareButtons{
+	padding: 10px;
+}
+
+.toolBox{
+	padding: 20px;
+	height: 400px;
+}
+
+.toolTextStyle{
+	font-weight: bold;
+	text-shadow: 0px 1px 2px red;
+	color: white;
+	padding-top: 10px;
+}
+
+/*Footer style*/
+.footerstyle{
+  font-weight: bolder;
+  color: blue;
+}
