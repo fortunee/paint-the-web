@@ -20,5 +20,32 @@ class Paint {
         this.setStrokeWidth(strokeRadius);
     }
 
+    lineDraw(e) {
+        const currentStroke = this.context.strokeStyle;
+        const currentFill = this.context.fillStyle;
+        const pencilColor = document.getElementById('pencilColor').value;
 
+        this.setFillColor(pencilColor);
+        this.setStrokeColor(pencilColor);
+
+        this.context.lineTo(e.offsetX, e.offsetY);
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.globalCompositeOperation = 'source-over';
+        this.context.arc(e.offsetX, e.offsetY, this.radius, 0, Math.PI*2);
+        this.context.fill();
+        this.context.beginPath();
+        this.context.moveTo(e.offsetX, e.offsetY);
+
+        this.setFillColor(currentFill);
+        this.setStrokeColor(currentStroke);
+    }
+
+    // drawModeChange() {
+    //     const drawingTools = document.querySelectorAll('.drawingTool');
+
+    //     drawingTools.forEach((tool) => {
+            
+    //     })
+    // }
 }
