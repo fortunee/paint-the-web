@@ -75,6 +75,26 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
+    triangleDraw(e) {
+        const currentLineWidth = this.context.lineWidth;
+        const height = this.shapeSize * (Math.sqrt(3)/2);
+        const x = e.offsetX - 15;
+        const y = e.offsetY - 40;
+
+        this.context.beginPath();
+        this.context.globalCompositeOperation = 'source-over';
+        this.context.moveTo(x, y);
+        this.context.lineTo(x + 50, y + height);
+        this.context.lineTo(x - 50, y + height);
+        this.context.lineTo(x, y);
+        this.context.fill();
+        this.context.closePath();
+        this.context.lineWidth = 5;
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.lineWidth = currentLineWidth;
+    }
+
     // drawModeChange() {
     //     const drawingTools = document.querySelectorAll('.drawingTool');
 
