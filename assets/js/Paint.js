@@ -62,6 +62,19 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
+    rectangleDraw(e) {
+        const currentLineWidth = this.context.lineWidth;
+
+        this.context.beginPath();
+        this.context.globalCompositeOperation = 'source-over';
+        this.context.arc(e.offsetX - 50, e.offsetY - 50, this.shapeSize - 70, this.shapeSize);
+        this.context.fill();
+        this.context.lineWidth = 5;
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.lineWidth = currentLineWidth;
+    }
+
     // drawModeChange() {
     //     const drawingTools = document.querySelectorAll('.drawingTool');
 
