@@ -150,4 +150,11 @@ class Paint {
                 this.setStrokeColor(pencilColorValue);
             });
     }
+
+    eraserStuff (e) {
+        this.context.beginPath();
+        this.context.globalCompositeOperation = 'destination-out';
+        this.context.arc(e.offsetX, e.offsetY, this.radius * 5, Math.PI * 2, false);
+        this.context.fill();
+    }
 }
