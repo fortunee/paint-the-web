@@ -49,6 +49,19 @@ class Paint {
         this.setStrokeColor(currentStroke);
     }
 
+    circleDraw(e) {
+        const currentLineWidth = this.context.lineWidth;
+
+        this.context.beginPath();
+        this.context.globalCompositeOperation = 'source-over';
+        this.context.arc(e.offsetX, e.offsetY, this.shapeSize - 50, 0, Math.PI*2);
+        this.context.fill();
+        this.context.lineWidth = 5;
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.lineWidth = currentLineWidth;
+    }
+
     // drawModeChange() {
     //     const drawingTools = document.querySelectorAll('.drawingTool');
 
