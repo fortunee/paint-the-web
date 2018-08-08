@@ -75,10 +75,9 @@ a{
 /*Color palette styles*/
 .colorPalette input{
 	width: 10%;
-	height: 10px;
-	margin-top: 10px;
-	border: 0;
-	outline: 0;
+	height: 30px;
+    margin-top: 20px;
+    border-radius: 3px;
 }
 .colorPalette input:hover{opacity: 0.5; cursor:pointer;}
 

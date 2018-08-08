@@ -67,7 +67,7 @@ class Paint {
 
         this.context.beginPath();
         this.context.globalCompositeOperation = 'source-over';
-        this.context.arc(e.offsetX - 50, e.offsetY - 50, this.shapeSize - 70, this.shapeSize);
+        this.context.rect(e.offsetX - 50, e.offsetY - 50, this.shapeSize + 70, this.shapeSize);
         this.context.fill();
         this.context.lineWidth = 5;
         this.context.stroke();
@@ -133,7 +133,7 @@ class Paint {
 
         strokeColor
             .addEventListener('change', () => {
-                const strokeColorValue = strokeColorValue.value;
+                const strokeColorValue = strokeColor.value;
                 this.setStrokeColor(strokeColorValue);
             });
 
