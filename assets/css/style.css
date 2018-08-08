@@ -1,5 +1,5 @@
 body{
-	background-color: #d9edf7;
+	background-color: #000000;
 }
 
 /*reset all browser margins and padding*/
@@ -12,7 +12,7 @@ body{
 }
 /*Navigation styles*/
 .navstyle {
-	background: rgb(56, 75, 208);
+	background: #000000;
 }
 
 .navbar-toggle{
@@ -62,16 +62,15 @@ a{
 /*Canvas style*/
 .drawingBoard{
 	background: #2a5461;
-	border: 1px solid #b15a5a;
-	border-top: 0px;
+	margin-top: 10px;
 	border-radius: 4px;
-	height: 400px;
 	padding: 10px;
 }
 #canvas{
 	background: #fff;
-	border: 1px dotted blue;
 	cursor: crosshair;
+	height: 400px;
+	width: 100%;
 }
 /*Color palette styles*/
 .colorPalette input{
@@ -92,7 +91,7 @@ a{
 
 
 .otherTools{
-	background: rgba(0, 0, 1, .7);
+	background: rgba(71, 71, 86, 0.7);
 }
 /*Clear save and share button*/
 .clearSaveShareButtons{
@@ -106,7 +105,6 @@ a{
 
 .toolTextStyle{
 	font-weight: bold;
-	text-shadow: 0px 1px 2px red;
 	color: white;
 	padding-top: 10px;
 }
