@@ -120,7 +120,7 @@ class Paint {
         pencilDraw
             .addEventListener('click', () => {
                 const pencilColorValue = pencilColor.value;
-                this.currentDrawingTool = this.getAttribute('data-title');
+                this.currentDrawingTool = pencilDraw.getAttribute('data-title');
                 this.setFillColor(pencilColorValue);
                 this.setStrokeColor(pencilColorValue);
             });

@@ -79,4 +79,3 @@ const initializePainting = (canvas) => {
 }
 
 initializePainting(canvas);
-
