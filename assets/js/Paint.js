@@ -106,9 +106,48 @@ class Paint {
                 
                 this.setFillColor(fillColor);
                 this.setStrokeColor(strokeColor);
-
-                console.log(this.drawMode, strokeColor, fillColor);
             });
         });
+    }
+
+    bindEventsToDrawingSettings() {
+        const pencilDraw = document.getElementById('pencilDraw');
+        const pencilColor = document.getElementById('pencilColor');
+        const strokeRadius = document.getElementById('strokeRadius')
+        const strokeColor = document.getElementById('strokeColor');
+        const fillColor = document.getElementById('fillColor');
+
+        pencilDraw
+            .addEventListener('click', () => {
+                const pencilColorValue = pencilColor.value;
+                this.drawMode = this.getAttribute('data-title');
+                this.setFillColor(pencilColorValue);
+                this.setStrokeColor(pencilColorValue);
+            });
+
+        strokeRadius
+            .addEventListener('change', () => {
+                const strokeWidth = document.getElementById('strokeRadius').value;
+                this.setStrokeWidth(strokeWidth);
+            });
+
+        strokeColor
+            .addEventListener('change', () => {
+                const strokeColorValue = strokeColorValue.value;
+                this.setStrokeColor(strokeColorValue);
+            });
+
+        fillColor
+            .addEventListener('change', () => {
+                const fillColorValue = fillColor.value;
+                this.fillColorValue(fillColorValue);
+            });
+
+        pencilColor
+            .addEventListener('change', () => {
+                const pencilColorValue = pencilColor.value;
+                this.setFillColor(pencilColorValue);
+                this.setStrokeColor(pencilColorValue);
+            });
     }
 }
