@@ -140,7 +140,7 @@ class Paint {
         fillColor
             .addEventListener('change', () => {
                 const fillColorValue = fillColor.value;
-                this.fillColorValue(fillColorValue);
+                this.setFillColor(fillColorValue);
             });
 
         pencilColor
@@ -158,8 +158,12 @@ class Paint {
         this.context.fill();
     }
 
-    saveDrawing (e) {
-        const imageData = this.canvas.toDataUrl('image/png');
+    clearScreen() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
+    saveDrawing () {
+        const imageData = this.canvas.toDataURL('image/png');
         const saveBtn = document.getElementById('saveBtn');
 
         saveBtn.setAttribute('download', 'MyCanvasDrawing.png');
@@ -167,7 +171,7 @@ class Paint {
     };
 
     tweetDrawing () {
-        document.getElementById('shareBtn')
+        document.getElementById('tweetBtn')
         .setAttribute('href',
             "https://twitter.com/intent/tweet?text=STUFF DOESN'T WORT AT THE MOMENT");
     }

@@ -1,4 +1,8 @@
 const canvas = document.getElementById('canvas');
+const clearScreenBtn = document.getElementById('clearScreen');
+const saveBtn = document.getElementById('saveBtn');
+const tweetBtn = document.getElementById('tweetBtn');
+
 let painting;
 let mouseDrag = false;
 
@@ -24,7 +28,7 @@ const startLineDrawing = (e) => {
     const drawingTool = painting.currentDrawingTool;
     if (mouseDrag && drawingTool === 'pencil') {
         painting.lineDraw(e);
-    } else if (drawingTool === 'eraser') {
+    } else if (mouseDrag && drawingTool === 'eraser') {
         painting.eraseStuff(e);
     }
 }
@@ -45,6 +49,18 @@ const startShapeDrawing = (e) => {
     }
 }
 
+const clearScreen = () => {
+    painting.clearScreen();
+}
+
+const saveDrawing = () => {
+    painting.saveDrawing();
+}
+
+const tweetDrawing = () => {
+    painting.tweetDrawing();
+}
+
 const initializePainting = (canvas) => {
     painting = new Paint(canvas);
     painting.initStrokeWidth();
@@ -56,6 +72,10 @@ const initializePainting = (canvas) => {
     canvas.addEventListener('mouseup', disengage);
     canvas.addEventListener('mousemove', startLineDrawing);
     canvas.addEventListener('click', startShapeDrawing);
+
+    clearScreenBtn.addEventListener('click', clearScreen);
+    saveBtn.addEventListener('click', saveDrawing);
+    tweetBtn.addEventListener('click', tweetDrawing);
 }
 
 initializePainting(canvas);
