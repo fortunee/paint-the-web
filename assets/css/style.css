@@ -1,5 +1,5 @@
 body{
-	background-color: #000000;
+	background-color: #071f1c;
 }
 
 /*reset all browser margins and padding*/
@@ -10,11 +10,8 @@ body{
 .no-padding{
 	padding: 0;
 }
-/*Navigation styles*/
-.navstyle {
-	background: #000000;
-}
 
+/*Navigation styles*/
 .navbar-toggle{
 	border: 1px solid white;
 }
@@ -24,39 +21,21 @@ body{
 
 .navstyle-links a:hover{
 	color: darkblue;
-  transition: all .3s ease-in-out;
-  background: rgba(15, 110, 142);
-	cursor: pointer;
-}
-
-.nav a{
-	color: white;
+	transition: all .3s ease-in-out;
+	background: rgba(15, 110, 142);
 	cursor: pointer;
 }
 
 /*Text logo style*/
 #logo{
 	font-weight: bolder;
+	font-size: 3rem;
 	text-shadow: 0px 1px 2px red;
 	color: white;
 }
 
-/*Jumbotron style looking awesome*/
-.welcome{
-	background:url(http://goo.gl/BnfU50) no-repeat;
-	background-size: cover;
-}
-
-.jumbotron{
-  background: rgba(0, 0, 1, .7);
-  color: #fff;
-  text-shadow:0px 1px 0px #1212ff;
-  font-weight: bolder;
-}
-
-/*Reset all my anchor tags cursor to pointer*/
-a{
-	cursor: pointer;
+.wrapper {
+	margin-top: 80px;
 }
 
 /*Canvas style*/
@@ -81,17 +60,10 @@ a{
 }
 .colorPalette input:hover{opacity: 0.5; cursor:pointer;}
 
-/*Palette colors*/
-.black {background-color: black;}
-.white {background-color: white;}
-.red {background-color: red;}
-.green {background-color: green;}
-.blue {background-color: blue;}
-
-
 .otherTools{
-	background: rgba(71, 71, 86, 0.7);
+	background: rgba(71, 86, 83, 0.7);
 }
+
 /*Clear save and share button*/
 .clearSaveShareButtons{
 	padding: 10px;
@@ -111,5 +83,6 @@ a{
 /*Footer style*/
 .footerstyle{
   font-weight: bolder;
-  color: blue;
+  font-size: 2rem;
+  color: #fff;
 }
