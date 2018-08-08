@@ -95,11 +95,20 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
-    // drawModeChange() {
-    //     const drawingTools = document.querySelectorAll('.drawingTool');
+    bindEventsToDrawingTools() {
+        const drawingTools = document.querySelectorAll('.drawingTool');
 
-    //     drawingTools.forEach((tool) => {
-            
-    //     })
-    // }
+        drawingTools.forEach((tool) => {
+            tool.addEventListener('click', () => {
+                this.drawMode = tool.getAttribute('data-title');
+                const strokeColor = document.getElementById('strokeColor').value;
+                const fillColor = document.getElementById('fillColor').value;
+                
+                this.setFillColor(fillColor);
+                this.setStrokeColor(strokeColor);
+
+                console.log(this.drawMode, strokeColor, fillColor);
+            });
+        });
+    }
 }

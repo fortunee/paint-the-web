@@ -60,10 +60,13 @@ var disengage = function(){
  * @param {Object} e - canvas element
  */
 var initializeCanvas = function(canvas){
-    canvasClass = new CanvasClass(canvas);
+    canvasClass = new Paint(canvas);
+    // canvasClass = new CanvasClass(canvas);
     canvasClass.initStrokeWidth();
-    canvasClass.bindSettingsChangeListenters();
-    canvasClass.bindDrawingModesChangeListener();
+    // canvasClass.bindSettingsChangeListenters();
+    // canvasClass.bindDrawingModesChangeListener();
+
+    canvasClass.bindEventsToDrawingTools()
 
     /* Bind mouse events to canvas */
     canvas.addEventListener('mousedown', engage);
