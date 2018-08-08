@@ -5,7 +5,7 @@ class Paint {
         this.shapeSize = 100;
         this.context = this.canvas.getContext('2d');
         this.context.lineWidth = this.radius * 2;
-        this.drawMode = 'Pencil';
+        this.currentDrawingTool = 'pencil';
     }
 
     setStrokeWidth(size) {
@@ -100,7 +100,7 @@ class Paint {
 
         drawingTools.forEach((tool) => {
             tool.addEventListener('click', () => {
-                this.drawMode = tool.getAttribute('data-title');
+                this.currentDrawingTool = tool.getAttribute('data-title');
                 const strokeColor = document.getElementById('strokeColor').value;
                 const fillColor = document.getElementById('fillColor').value;
                 
@@ -120,7 +120,7 @@ class Paint {
         pencilDraw
             .addEventListener('click', () => {
                 const pencilColorValue = pencilColor.value;
-                this.drawMode = this.getAttribute('data-title');
+                this.currentDrawingTool = this.getAttribute('data-title');
                 this.setFillColor(pencilColorValue);
                 this.setStrokeColor(pencilColorValue);
             });

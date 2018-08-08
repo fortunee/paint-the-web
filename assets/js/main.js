@@ -20,6 +20,15 @@ const disengage = (e) => {
     painting.context.beginPath();
 }
 
+const startLineDrawing = (e) => {
+    const drawingTool = painting.currentDrawingTool;
+    if (mouseDrag && drawingTool === 'pencil') {
+        painting.lineDraw(e);
+    } else if (drawingTool === 'eraser') {
+        painting.eraseStuff(e);
+    }
+}
+
 const initializePainting = (canvas) => {
     painting = new Paint(canvas);
     painting.initStrokeWidth();
@@ -29,7 +38,7 @@ const initializePainting = (canvas) => {
 
     canvas.addEventListener('mousedown', engage);
     canvas.addEventListener('mouseup', disengage);
-    canvas.addEventListener('mousemove', lineDrawing);
+    canvas.addEventListener('mousemove', startLineDrawing);
     canvas.addEventListener('click', shapeDrawing);
 }
 
