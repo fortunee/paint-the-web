@@ -15,6 +15,14 @@ class Paint {
         counter.innerHTML = size;
     }
 
+    setStrokeColor(color) {
+        this.context.strokeStyle = color;
+    }
+
+    setFillColor(color) {
+        this.context.fillStyle = color;
+    }
+
     initStrokeWidth() {
         const strokeRadius = document.getElementById('strokeRadius').value;
         this.setStrokeWidth(strokeRadius);
