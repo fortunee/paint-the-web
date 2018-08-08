@@ -29,6 +29,22 @@ const startLineDrawing = (e) => {
     }
 }
 
+const startShapeDrawing = (e) => {
+    const drawingTool = painting.currentDrawingTool;
+    
+    if (drawingTool === 'circle') {
+        painting.circleDraw(e);
+    }
+
+    if (drawingTool === 'rectangle') {
+        painting.rectangleDraw(e);
+    }
+
+    if (drawingTool === 'triangle') {
+        painting.triangleDraw(e);
+    }
+}
+
 const initializePainting = (canvas) => {
     painting = new Paint(canvas);
     painting.initStrokeWidth();
@@ -39,7 +55,7 @@ const initializePainting = (canvas) => {
     canvas.addEventListener('mousedown', engage);
     canvas.addEventListener('mouseup', disengage);
     canvas.addEventListener('mousemove', startLineDrawing);
-    canvas.addEventListener('click', shapeDrawing);
+    canvas.addEventListener('click', startShapeDrawing);
 }
 
 initializePainting(canvas);
