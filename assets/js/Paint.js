@@ -163,6 +163,12 @@ class Paint {
         const saveBtn = document.getElementById('saveBtn');
 
         saveBtn.setAttribute('download', 'MyCanvasDrawing.png');
-        saveBtn.setAttribute('href', data.replace('image/png', 'image/octet-stream'));
+        saveBtn.setAttribute('href', imageData.replace('image/png', 'image/octet-stream'));
     };
+
+    tweetDrawing () {
+        document.getElementById('shareBtn')
+        .setAttribute('href',
+            "https://twitter.com/intent/tweet?text=STUFF DOESN'T WORT AT THE MOMENT");
+    }
 }
