@@ -5,7 +5,7 @@ class Paint {
         this.shapeSize = 100;
         this.context = this.canvas.getContext('2d');
         this.context.lineWidth = this.radius * 2;
-        this.drawMode = 'pencil';
+        this.drawMode = 'Pencil';
     }
 
     setStrokeWidth(size) {
@@ -151,7 +151,7 @@ class Paint {
             });
     }
 
-    eraserStuff (e) {
+    eraseStuff (e) {
         this.context.beginPath();
         this.context.globalCompositeOperation = 'destination-out';
         this.context.arc(e.offsetX, e.offsetY, this.radius * 5, Math.PI * 2, false);

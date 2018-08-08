@@ -28,7 +28,7 @@ var drawLine = function(e){
  */
 var drawShape = function(e){
   if(canvasClass.drawMode == 'Circle'){
-    canvasClass.drawCircle(e);
+    canvasClass.circl(e);
   }else if (canvasClass.drawMode == 'Rectangle') {
     canvasClass.drawRectangle(e);
   }else if (canvasClass.drawMode == 'Triangle') {
@@ -66,7 +66,8 @@ var initializeCanvas = function(canvas){
     // canvasClass.bindSettingsChangeListenters();
     // canvasClass.bindDrawingModesChangeListener();
 
-    canvasClass.bindEventsToDrawingTools()
+    canvasClass.bindEventsToDrawingSettings();
+    canvasClass.bindEventsToDrawingTools();
 
     /* Bind mouse events to canvas */
     canvas.addEventListener('mousedown', engage);
