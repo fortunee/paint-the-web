@@ -157,4 +157,12 @@ class Paint {
         this.context.arc(e.offsetX, e.offsetY, this.radius * 5, Math.PI * 2, false);
         this.context.fill();
     }
+
+    saveDrawing (e) {
+        const imageData = this.canvas.toDataUrl('image/png');
+        const saveBtn = document.getElementById('saveBtn');
+
+        saveBtn.setAttribute('download', 'MyCanvasDrawing.png');
+        saveBtn.setAttribute('href', data.replace('image/png', 'image/octet-stream'));
+    };
 }
