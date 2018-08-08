@@ -8,8 +8,17 @@ class Paint {
         this.drawMode = 'pencil';
     }
 
+    setStrokeWidth(size) {
+        this.radius = size;
+        this.context.lineWidth = this.radius * 2;
+        const counter = document.getElementById('widthCount');
+        counter.innerHTML = size;
+    }
+
     initStrokeWidth() {
         const strokeRadius = document.getElementById('strokeRadius').value;
         this.setStrokeWidth(strokeRadius);
     }
+
+
 }
