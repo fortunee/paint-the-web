@@ -1,5 +1,5 @@
 # BC-19-Painting-Application
-[PaintTheWeb](https://andela-efortune.github.io/bc-19-painting-application/) is a painting web application that allows a user to select shapes, draw and paint. It is built with HTML5 Canvas and firebase for persistence.
+[PaintTheWeb](https://fortunee.github.io/bc-19-painting-application/) is a painting web application that allows a user to select shapes, draw and paint. It is built with HTML5 Canvas and firebase for persistence.
 
 **Inspired By:**
 
