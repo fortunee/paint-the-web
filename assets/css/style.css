@@ -44,13 +44,17 @@ body{
 	margin-top: 10px;
 	border-radius: 4px;
 	padding: 10px;
+	height: 475px;
 }
+
 #canvas{
 	background: #fff;
 	cursor: crosshair;
-	height: 400px;
+	height: 100%;
+	max-height: 470px;
 	width: 100%;
 }
+
 /*Color palette styles*/
 .colorPalette input{
 	width: 10%;
