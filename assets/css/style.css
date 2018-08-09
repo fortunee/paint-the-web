@@ -62,12 +62,16 @@ body{
 
 .toolTextStyle {
 	font-weight: bold;
-	color: white;
 	padding-top: 10px;
 }
 
-.toolTextStyle .glyphicon {
-	color: black;
+.toolTextStyle span {
+	color: white;
+}
+
+.active {
+	background: green;
+	color: #fff;
 }
 
 /*Footer style*/

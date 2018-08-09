@@ -1,5 +1,5 @@
 class Paint {
-    constructor(canvas) {
+    constructor (canvas) {
         this.canvas = canvas;
         this.radius = 10;
         this.shapeSize = 100;
@@ -8,14 +8,14 @@ class Paint {
         this.currentDrawingTool = 'pencil';
     }
 
-    setStrokeWidth(size) {
+    setStrokeWidth (size) {
         this.radius = size;
         this.context.lineWidth = this.radius * 2;
         const counter = document.getElementById('widthCount');
         counter.innerHTML = size;
     }
 
-    setStrokeColor(color) {
+    setStrokeColor (color) {
         this.context.strokeStyle = color;
     }
 
@@ -23,12 +23,12 @@ class Paint {
         this.context.fillStyle = color;
     }
 
-    initStrokeWidth() {
+    initStrokeWidth () {
         const strokeRadius = document.getElementById('strokeRadius').value;
         this.setStrokeWidth(strokeRadius);
     }
 
-    lineDraw(e) {
+    lineDraw (e) {
         const currentStroke = this.context.strokeStyle;
         const currentFill = this.context.fillStyle;
         const pencilColor = document.getElementById('pencilColor').value;
@@ -49,7 +49,7 @@ class Paint {
         this.setStrokeColor(currentStroke);
     }
 
-    circleDraw(e) {
+    circleDraw (e) {
         const currentLineWidth = this.context.lineWidth;
 
         this.context.beginPath();
@@ -62,7 +62,7 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
-    rectangleDraw(e) {
+    rectangleDraw (e) {
         const currentLineWidth = this.context.lineWidth;
 
         this.context.beginPath();
@@ -75,7 +75,7 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
-    triangleDraw(e) {
+    triangleDraw (e) {
         const currentLineWidth = this.context.lineWidth;
         const height = this.shapeSize * (Math.sqrt(3)/2);
         const x = e.offsetX - 15;
@@ -95,7 +95,7 @@ class Paint {
         this.context.lineWidth = currentLineWidth;
     }
 
-    bindEventsToDrawingTools() {
+    bindEventsToDrawingTools () {
         const drawingTools = document.querySelectorAll('.drawingTool');
 
         drawingTools.forEach((tool) => {
@@ -104,13 +104,14 @@ class Paint {
                 const strokeColor = document.getElementById('strokeColor').value;
                 const fillColor = document.getElementById('fillColor').value;
                 
+                this.setActiveTool(tool);
                 this.setFillColor(fillColor);
                 this.setStrokeColor(strokeColor);
             });
         });
     }
 
-    bindEventsToDrawingSettings() {
+    bindEventsToDrawingSettings () {
         const pencilDraw = document.getElementById('pencilDraw');
         const pencilColor = document.getElementById('pencilColor');
         const strokeRadius = document.getElementById('strokeRadius')
@@ -158,7 +159,7 @@ class Paint {
         this.context.fill();
     }
 
-    clearScreen() {
+    clearScreen () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
@@ -174,5 +175,11 @@ class Paint {
         document.getElementById('tweetBtn')
         .setAttribute('href',
             "https://twitter.com/intent/tweet?text=STUFF DOESN'T WORT AT THE MOMENT");
+    }
+
+    setActiveTool (tool) {
+        const active = document.querySelector('.active');
+        active.classList.remove('active');
+        tool.classList.add('active');
     }
 }
