@@ -179,7 +179,11 @@ class Paint {
 
     setActiveTool (tool) {
         const active = document.querySelector('.active');
+        const drawingCanvas = document.getElementById('canvas');
+        const currentDrawingTool = tool.getAttribute('data-title');
+
         active.classList.remove('active');
         tool.classList.add('active');
+        drawingCanvas.className = `canvas ${currentDrawingTool}-cursor`;
     }
 }

@@ -31,10 +31,30 @@ body{
 	padding: 10px;
 }
 
-#canvas{
+.canvas {
 	background: #fff;
-	cursor: crosshair;
+	cursor: url('../cursor/pencil.cur'), default;
 	width: 100%;
+}
+
+.pencil-cursor {
+	cursor: url('../cursor/pencil.cur'), default;
+}
+
+.eraser-cursor {
+	cursor: url('../cursor/eraser.cur'), default;
+}
+
+.circle-cursor {
+	cursor: url('../cursor/circle.cur'), default;
+}
+
+.rectangle-cursor {
+	cursor: url('../cursor/rectangle.cur'), default;
+}
+
+.triangle-cursor {
+	cursor: url('../cursor/triangle.cur'), default;
 }
 
 /*Color palette styles*/
@@ -44,7 +64,11 @@ body{
     margin-top: 20px;
     border-radius: 3px;
 }
-.colorPalette input:hover{opacity: 0.5; cursor:pointer;}
+
+.colorPalette input:hover{
+	opacity: 0.5;
+	cursor:pointer;
+}
 
 .otherTools{
 	background: rgba(71, 86, 83, 0.7);
