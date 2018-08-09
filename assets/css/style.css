@@ -31,9 +31,9 @@ body{
 	padding: 10px;
 }
 
-#canvas{
+#canvas {
 	background: #fff;
-	cursor: crosshair;
+	cursor: url('../cursor/pencil.cur'), default;
 	width: 100%;
 }
 
