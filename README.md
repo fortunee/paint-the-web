@@ -1,6 +1,6 @@
 # Painting Application
 ### [PaintTheWeb Demo](https://fortunee.github.io/bc-19-painting-application/)
-This is a painting web application that allows a user to select shapes, draw and paint. It is built with HTML5 Canvas and firebase for persistence.
+This is a painting web application that allows a user to select shapes, draw and paint. It is built with HTML5 Canvas.
 
 **Inspired By:**
 
