@@ -11,21 +11,6 @@ body{
 	padding: 0;
 }
 
-/*Navigation styles*/
-.navbar-toggle{
-	border: 1px solid white;
-}
-.icon-bar{
-	background: white;
-}
-
-.navstyle-links a:hover{
-	color: darkblue;
-	transition: all .3s ease-in-out;
-	background: rgba(15, 110, 142);
-	cursor: pointer;
-}
-
 /*Text logo style*/
 #logo{
 	font-weight: bolder;
@@ -44,14 +29,11 @@ body{
 	margin-top: 10px;
 	border-radius: 4px;
 	padding: 10px;
-	height: 475px;
 }
 
 #canvas{
 	background: #fff;
 	cursor: crosshair;
-	height: 100%;
-	max-height: 470px;
 	width: 100%;
 }
 
@@ -78,10 +60,14 @@ body{
 	height: 400px;
 }
 
-.toolTextStyle{
+.toolTextStyle {
 	font-weight: bold;
 	color: white;
 	padding-top: 10px;
+}
+
+.toolTextStyle .glyphicon {
+	color: black;
 }
 
 /*Footer style*/
