@@ -13,8 +13,6 @@
 
   <!-- Custom style -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Firebase CDN -->
-  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
 </head>
 <body>
@@ -34,213 +32,41 @@
             <strong id="logo"><em>PaintThe</em>Web</strong>
           </a>
   			</div>
-
-  			<div class="collapse navbar-collapse" id="mobile-display">
-  			<div class="navbar-right">
-  				<ul class="nav navbar-nav navstyle-links">
-  					<li><a data-toggle="modal"
-              data-target="#loginModal" id="navLogin">Login</a></li>
-  					<li><a data-toggle="modal"
-              data-target="#signUpModal" id="navSignup">Signup</a></li>
-            <li><a id="btnLogout" class="hide">Logout</a></li>
-  				</ul>
-  			</div>
-  			</div>
   		</div>
   	</nav>
 	</header>
 
-  <div id="alienView" class="">
-    <!-- Oh how sweet! The welcome jumbotron  -->
-    <div class="welcome">
-      <div class="jumbotron text-center">
-        <div class="container">
-          <h1><span id="logo"><em>PaintThe</em>Web</span></h1>
-          <h3>Hey Buddy! I wanna paint with you</h3>
-          <h3>Let's start off with something cool</h3>
-          <h3>Signup and let's get to work</h3>
-          <p>
-            <a class="btn btn-primary btn-lg" data-toggle="modal"
-              data-target="#signUpModal" role="button">Signup</a> <br>
-            <em class="small">or click <a  data-toggle="modal"
-              data-target="#loginModal">here</a> to login
-            </em>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Users Testimonies columns - I pray oo -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Joshua - Artist</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-          tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-          massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-          Donec sed odio dui. </p>
-        </div>
-        <div class="col-md-4">
-          <h2>Shalom - Painter</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-          amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-        </div>
-        <div class="col-md-4">
-          <h2>The Boss - Just me</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-          Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
-          commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-      </div>
-    </div>
-    <!-- Users testimonies columns-->
-
-
-    <!-- Modal for user signup form -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <button type="button" class="close"
-               data-dismiss="modal">
-                   <span aria-hidden="true">&times;</span>
-                   <span class="sr-only">Close</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-                Sign up
-            </h4>
-            <!-- Flash message -->
-            <div id="successFlash" class="alert alert-success hide">
-              <strong>Signing up!</strong> Please wait..
-            </div>
-
-            <div id="errorFlash" class="alert alert-danger hide">
-              <strong>Error!</strong> There might be a problem!
-            </div>
-          </div>
-
-          <!-- Modal Body -->
-          <div class="modal-body">
-            <div class="form-horizontal" role="form">
-              <div class="form-group">
-                <label  class="col-sm-2 control-label"
-                          for="signupEmail">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control"
-                    id="signupEmail" placeholder="Email"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label"
-                      for="signupPassword" >Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control"
-                        id="signupPassword" placeholder="Password"/>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                        <input type="checkbox"/> Remember me
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button class="btn btn-primary"
-                  id="btnSignup">Sign up</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- Modal for user signup ends -->
-
-
-    <!--Login Form Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-              <button type="button" class="close"
-                 data-dismiss="modal">
-                     <span aria-hidden="true">&times;</span>
-                     <span class="sr-only">Close</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">
-                  Login
-              </h4>
-              <!-- Flash message -->
-              <div id="loginError" class="alert alert-danger hide">
-                <strong>Error!</strong> Invalid login, please try again!
-              </div>
-
-              <div id="loginFlash" class="alert alert-success hide">
-                <strong>Logging in!</strong> Please wait..
-              </div>
-          </div>
-
-          <!-- Modal Body -->
-          <div class="modal-body">
-              <div class="form-group">
-                <label for="loginEmail">Email address</label>
-                  <input type="email" class="form-control"
-                  id="loginEmail" placeholder="Enter email"/>
-              </div>
-              <div class="form-group">
-                <label for="loginPassword">Password</label>
-                  <input type="password" class="form-control"
-                      id="loginPassword" placeholder="Password"/>
-              </div>
-              <div class="checkbox">
-                <label>
-                    <input type="checkbox"/> Check me out
-                </label>
-              </div>
-              <button class="btn btn-primary"
-              id="btnLogin">Login</button>
-          </div>
-        </div>
-      </div>
-    </div><!--Login form modal ends -->
-    <!-- Both modals ends here -->
-  </div>  <!-- alienView ends -->
-
-
   <!-- Members area content -->
-  <div id="memberView" class="container wrapper hide">
+  <div id="memberView" class="container wrapper">
       <!-- Canvas Drawing board -->
       <div class="col-md-10 drawingBoard"  >
-        <canvas id="canvas" width="925px" height="380px">
+        <canvas id="canvas" width="925px" height="470px">
           Please update your browser to use the canvas
         </canvas>
 
       </div>
       <!-- Toolbox area -->
       <div class="col-md-2 toolTextStyle">
-        <button class="drawingTool btn btn-lg btn-primary glyphicon glyphicon-pencil"
-          id="pencilDraw" data-title="Pencil"></button>
-        <span>Pencil</span> <br><br>
-        <button class="drawingTool btn  btn-lg btn-default glyphicon glyphicon-erase"
-          id="eraser"data-title="Eraser"></button>
-        <span>Eraser</span> <br><br>
-        <button class="drawingTool btn btn-lg btn-default"
-          id="circle"data-title="Circle">&#10061;</button>
-        <span>Circle</span> <br><br>
-        <button class="drawingTool btn  btn-lg btn-default"
-          id="rectangle"data-title="Rectangle">&#9633;</button>
-        <span>Rectangle</span><br><br>
-        <button class="drawingTool btn  btn-lg btn-default"
-          id="triangle"data-title="Triangle">&#9650;</button>
-        <span>Triangle</span><br><br>
+        <span>Pencil</span>
+        <button class="btn-block drawingTool btn btn-lg glyphicon glyphicon-pencil active"
+          id="pencilDraw" data-title="pencil"></button>
+        <br>
+        <span>Eraser</span>
+        <button class="btn-block drawingTool btn btn-lg glyphicon glyphicon-erase"
+          id="eraser" data-title="eraser"></button>
+        <br>
+        <span>Circle</span> 
+        <button class="btn-block drawingTool btn btn-lg"
+          id="circle" data-title="circle">&#10061;</button>
+        <br>
+        <span>Rectangle</span>
+        <button class="btn-block drawingTool btn btn-lg"
+          id="rectangle" data-title="rectangle">&#9633;</button>
+        <br>
+        <span>Triangle</span>
+        <button class="btn-block drawingTool btn btn-lg"
+          id="triangle" data-title="triangle">&#9650;</button>
+        <br>
 
 
         <button class="btn btn-success" id="widthCount" >0</button>
@@ -253,11 +79,11 @@
     <div class="row otherTools toolTextStyle">
       <div id="colorPalette" class="col-md-8 colorPalette">
         <span>Fill Color: </span>
-        <input type="color" id="fillColor" class="colorButton red">
+        <input type="color" id="fillColor" value="#FF0000">
         <span>Pencil Color: </span>
-        <input type="color" id="pencilColor" class="colorButton green">
+        <input type="color" id="pencilColor" value="#000000">
         <span>Stroke Color: </span>
-        <input type="color" id="strokeColor" class="colorButton blue">
+        <input type="color" id="strokeColor" value="#0000FF">
       </div>
       <!-- Clear, Save and share buttons -->
       <div class="col-md-4 clearSaveShareButtons">
@@ -265,7 +91,7 @@
           id="clearScreen"></button>
         <a class="btn btn-lg btn-success glyphicon glyphicon-floppy-save"
           id="saveBtn"></a>
-        <a class="btn btn-lg btn-info" id="shareBtn" target="_blank">
+        <a class="btn btn-lg btn-info" id="tweetBtn" target="_blank">
           <i class="fa fa-twitter" aria-hidden="true"></i>
         </a>
       </div>
@@ -274,15 +100,13 @@
   </div><!-- Members area ends -->
 
 
-  <hr>
-  <footer class="text-center footerstyle">
-    <p>&copy; 2016 PaintTheWeb, Inc.</p>
+  <footer class="footer navbar-fixed-bottom text-center footerstyle">
+    <p>&copy; 2018 Fortune Ekeruo</p>
   </footer>
 
-  <script src="assets/js/CanvasClass.js"></script>
-  <script src="assets/js/logic.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap/jquery.min.js"></script>
+  <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+  <script src="assets/js/Paint.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
