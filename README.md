@@ -24,9 +24,11 @@ This is a painting web app that allows a user to select shapes, draw and paint. 
 * And a few more coming up soon
 
 
-## Dependecies
+## Tools
 
 * [Bootstrap](http://getbootstrap.com/)
+* HTML5 Canvas
+* ES6 Classes
 
 ## Licence
 MIT License
