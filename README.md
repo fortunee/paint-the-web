@@ -1,5 +1,5 @@
 # PaintTheWeb
-### [See Demo](https://fortunee.github.io/paint-the-web/)
+### [Demo](https://fortunee.github.io/paint-the-web/)
 This is a painting web app that allows a user to select shapes, draw and paint. It is built with HTML5 Canvas.
 
 **Inspired By:**
@@ -31,6 +31,4 @@ This is a painting web app that allows a user to select shapes, draw and paint. 
 * ES6 Classes
 
 ## Licence
-MIT License
-
-Copyright (c) 2018 Fortune Ikechukwu Ekeruo
+Copyright (c) 2018 Fortune Ekeruo
