@@ -14,9 +14,9 @@ This is a painting web application that allows a user to select shapes, draw and
 
 * Pencil Tool
 * Stroke Tool
-* Erase Tool
-* Hex color palette tool
-* Clear tool
+* Eraser Tool
+* HTML Hex color palette tool
+* Clear screen tool
 * Save tool
 * Circle shape tool
 * Rectangle shape tool
