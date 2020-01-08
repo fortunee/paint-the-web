@@ -27,8 +27,8 @@ This is a painting web application that allows a user to select shapes, draw and
 ## Tools
 
 * [Bootstrap](http://getbootstrap.com/)
-* HTML5 Canvas
-* ES6 Classes
+* [HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp)
+* [ES6 Classes](https://www.tutorialspoint.com/es6/es6_classes.htm)
 
 ## Licence
 Copyright (c) 2018 Fortune Ekeruo
