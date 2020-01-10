@@ -31,4 +31,4 @@ This is a painting web application that allows a user to select shapes, draw and
 * [ES6 Classes](https://www.tutorialspoint.com/es6/es6_classes.htm)
 
 ## Licence
-Copyright (c) 2018 Fortune Ekeruo
+Copyright (c) 2020 Fortune Ekeruo
