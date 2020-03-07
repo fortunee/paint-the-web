@@ -24,7 +24,7 @@ This is a painting web application that allows a user to select shapes, draw and
 * And a few more coming up soon
 
 
-## Tools
+## Libraries used
 
 * [Bootstrap](http://getbootstrap.com/)
 * [HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp)
