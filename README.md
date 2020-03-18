@@ -8,7 +8,7 @@ This is a painting web application that allows a user to select shapes, draw and
 
 **Credits**
 
-* [Thenewboston - HTML5 Canvas Drawing App tutorial](https://thenewboston.com/videos.php?cat=81)
+* [TheNewBoston - HTML5 Canvas Drawing App tutorial](https://thenewboston.com/videos.php?cat=81)
 
 ## Features:
 
