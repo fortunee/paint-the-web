@@ -8,7 +8,8 @@ let mouseDrag = false;
 
 /**
  * on mousedown we engage our canvas
- * @param {object} e 
+ * @param {object} e - event
+ * @returns {void}
  */
 const engage = (e) => {
     mouseDrag = true;
@@ -17,7 +18,8 @@ const engage = (e) => {
 
 /**
  * On mouseup we disengage and begin a new path
- * @param {object} e 
+ * @param {object} e - event
+ * @returns {void}
  */
 const disengage = (e) => {
     mouseDrag = false;
